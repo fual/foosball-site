@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+    <title>Match#2</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+            <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/layouts/side-menu.css">
+            <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+        <!--<![endif]-->
+        <link rel="stylesheet" href="css/protocol.css">
+</head>
+
+<body>
+<div id="layout">
+    <!-- Menu toggle -->
+    <div class="moble-head">
+        <a id="menuLink" href="#menu" class="menu-link moble-head__menu-link">
+            <!-- Hamburger icon -->
+            <span></span>
+        </a>
+        <span class="mobile-head__logo">FOOS LEAGUE</span>
+        <div class="moble-head__select-city">
+
+<a href="/league/spb/"
+   class="pure-button  pure-button-primary ">
+    spb
+</a>
+
+<a href="/league/msk/"
+   class="pure-button   ">
+    msk
+</a>
+
+        </div>
+    </div>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <div class="pure-menu-heading">
+                <span class="logo">FOOS LEAGUE</span>
+                <div class="pure-menu-heading__select-city">
+
+<a href="/league/spb/"
+   class="pure-button  pure-button-primary ">
+    spb
+</a>
+
+<a href="/league/msk/"
+   class="pure-button   ">
+    msk
+</a>
+
+                </div>
+            </div>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item menu-item-divided pure-menu-selected">
+                    <a href="/league/spb/" class="pure-menu-link">Рейтинг команд</a>
+                </li>
+                <li class="pure-menu-item ">
+                    <a href="/league/spb/players/"
+                       class="pure-menu-link">Рейтинг игроков</a>
+                </li>
+                <li class="pure-menu-item ">
+                    <a href="/league/spb/matches/" class="pure-menu-link">Матчи</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+
+<div class="header">
+    <h1><span class="title__city">Сезон 2018 / </span>Рейтинг команд</h1>
+    <div class="season-buttons">
+
+        <a class="pure-button pure-button-primary division-link"
+           id="tab-link-division-1"
+           onclick="openTab('division-1', 'division')">1й дивизион</a>
+
+        <a class="pure-button  division-link"
+           id="tab-link-division-2"
+           onclick="openTab('division-2', 'division')">2й дивизион</a>
+
+    </div>
+</div>
+
+
+<div class="content division tab-content-division" id="division-2">
+    <table class="pure-table table_style_default teams-result-table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th class="team-call">Команда</th>
+            <th>И</th>
+            <th>В</th>
+
+            <th>П</th>
+
+            <th>П*</th>
+
+            <th class="goal-difference">Р</th>
+            <th class="match-difference">РМ</th>
+            <th>О</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td>1</td>
+            <td class="team-call">Pif- Paf</td>
+            <td>9</td>
+            <td>8</td>
+
+            <td>1</td>
+
+            <td>0</td>
+
+            <td class="goal-difference">144</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">20</td>
+            <td>16</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td class="team-call">Rezaq</td>
+            <td>7</td>
+            <td>7</td>
+
+            <td>0</td>
+
+            <td>0</td>
+
+            <td class="goal-difference">76</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">16</td>
+            <td>14</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td class="team-call">Dino Systems</td>
+            <td>8</td>
+            <td>6</td>
+
+            <td>2</td>
+
+            <td>1</td>
+
+            <td class="goal-difference">106</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">16</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td class="team-call">ВП</td>
+            <td>8</td>
+            <td>6</td>
+
+            <td>2</td>
+
+            <td>0</td>
+
+            <td class="goal-difference">101</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">16</td>
+            <td>12</td>
+        </tr>
+
+        <tr>
+            <td>5</td>
+            <td class="team-call">Академия кикерного мастерства</td>
+            <td>8</td>
+            <td>6</td>
+
+            <td>2</td>
+
+            <td>0</td>
+
+            <td class="goal-difference">85</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">13</td>
+            <td>12</td>
+        </tr>
+
+        <tr>
+            <td>6</td>
+            <td class="team-call">Hitmen</td>
+            <td>8</td>
+            <td>6</td>
+
+            <td>2</td>
+
+            <td>0</td>
+
+            <td class="goal-difference">65</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">11</td>
+            <td>12</td>
+        </tr>
+
+        <tr>
+            <td>7</td>
+            <td class="team-call">Реверспинкик</td>
+            <td>7</td>
+            <td>6</td>
+
+            <td>1</td>
+
+            <td>0</td>
+
+            <td class="goal-difference">85</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">10</td>
+            <td>12</td>
+        </tr>
+
+        <tr>
+            <td>8</td>
+            <td class="team-call">Foostration</td>
+            <td>5</td>
+            <td>4</td>
+
+            <td>1</td>
+
+            <td>1</td>
+
+            <td class="goal-difference">107</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">18</td>
+            <td>9</td>
+        </tr>
+
+        <tr>
+            <td>9</td>
+            <td class="team-call">LoyaltyPlant</td>
+            <td>6</td>
+            <td>4</td>
+
+            <td>2</td>
+
+            <td>1</td>
+
+            <td class="goal-difference">20</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">5</td>
+            <td>9</td>
+        </tr>
+
+        <tr>
+            <td>10</td>
+            <td class="team-call">Брикошет</td>
+            <td>9</td>
+            <td>4</td>
+
+            <td>5</td>
+
+            <td>1</td>
+
+            <td class="goal-difference">9</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">2</td>
+            <td>9</td>
+        </tr>
+
+        <tr>
+            <td>11</td>
+            <td class="team-call">PETER-SERVICE</td>
+            <td>8</td>
+            <td>3</td>
+
+            <td>5</td>
+
+            <td>1</td>
+
+            <td class="goal-difference">-25</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">-3</td>
+            <td>7</td>
+        </tr>
+
+        <tr>
+            <td>12</td>
+            <td class="team-call">Станислав Викторович</td>
+            <td>8</td>
+            <td>3</td>
+
+            <td>5</td>
+
+            <td>0</td>
+
+            <td class="goal-difference">-96</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">-18</td>
+            <td>6</td>
+        </tr>
+
+        <tr>
+            <td>13</td>
+            <td class="team-call">Gold Shot</td>
+            <td>8</td>
+            <td>2</td>
+
+            <td>6</td>
+
+            <td>1</td>
+
+            <td class="goal-difference">-13</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">-3</td>
+            <td>5</td>
+        </tr>
+
+        <tr>
+            <td>14</td>
+            <td class="team-call">Orange Team</td>
+            <td>7</td>
+            <td>1</td>
+
+            <td>6</td>
+
+            <td>1</td>
+
+            <td class="goal-difference">-75</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">-11</td>
+            <td>3</td>
+        </tr>
+
+        <tr>
+            <td>15</td>
+            <td class="team-call">The Pub</td>
+            <td>7</td>
+            <td>1</td>
+
+            <td>6</td>
+
+            <td>0</td>
+
+            <td class="goal-difference">-83</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">-11</td>
+            <td>2</td>
+        </tr>
+
+        <tr>
+            <td>16</td>
+            <td class="team-call">KPI Lead</td>
+            <td>5</td>
+            <td>0</td>
+
+            <td>5</td>
+
+            <td>0</td>
+
+            <td class="goal-difference">-145</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">-21</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>17</td>
+            <td class="team-call">Шампуры крутятся - голы мутятся</td>
+            <td>8</td>
+            <td>0</td>
+
+            <td>8</td>
+
+            <td>0</td>
+
+            <td class="goal-difference">-170</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">-29</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>18</td>
+            <td class="team-call">KickerSni</td>
+            <td>8</td>
+            <td>0</td>
+
+            <td>8</td>
+
+            <td>0</td>
+
+            <td class="goal-difference">-191</td>
+            <td class="hidden">0</td>
+            <td class="match-difference">-31</td>
+            <td>0</td>
+        </tr>
+
+        </tbody>
+    </table>
+    <div class="glossary">
+        <div class="glossary_title">Глоссарий</div>
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">И</dt>
+            <dd class="gloss_transcript">Количество сыгранных матчей</dd>
+        </dl>
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">В</dt>
+            <dd class="gloss_transcript">Количество побед</dd>
+        </dl>
+
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">П</dt>
+            <dd class="gloss_transcript">Количество проигрышей</dd>
+        </dl>
+
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">П*</dt>
+            <dd class="gloss_transcript">Количество проигрышей по пенальти</dd>
+        </dl>
+
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">Р</dt>
+            <dd class="gloss_transcript">Разница между забитыми и пропущенными голами</dd>
+        </dl>
+
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">РМ</dt>
+            <dd class="gloss_transcript">Разница между победами и поражениями в матчах</dd>
+        </dl>
+
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">О</dt>
+            <dd class="gloss_transcript">Очки за матчи</dd>
+        </dl>
+    </div>
+</div>
+
+<script>
+
+</script>
+
+    </div>
+</div>
+<script src="/static/league/js/ui.js"></script>
+</body>
+
+</html>

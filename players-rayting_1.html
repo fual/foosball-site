@@ -1,0 +1,822 @@
+
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+    <title>Рейтинг №1</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+            <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/layouts/side-menu.css">
+            <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+        <!--<![endif]-->
+        <link rel="stylesheet" href="css/protocol.css">
+</head>
+<body>
+<div id="layout">
+    <!-- Menu toggle -->
+    <div class="moble-head">
+        <a id="menuLink" href="#menu" class="menu-link moble-head__menu-link">
+            <!-- Hamburger icon -->
+            <span></span>
+        </a>
+        <span class="mobile-head__logo">FOOS LEAGUE</span>
+        <div class="moble-head__select-city">
+
+<a href="/league/spb/"
+   class="pure-button  pure-button-primary ">
+    spb
+</a>
+
+<a href="/league/msk/"
+   class="pure-button   ">
+    msk
+</a>
+
+        </div>
+    </div>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <div class="pure-menu-heading">
+                <span class="logo">FOOS LEAGUE</span>
+                <div class="pure-menu-heading__select-city">
+
+<a href="/league/spb/"
+   class="pure-button  pure-button-primary ">
+    spb
+</a>
+
+<a href="/league/msk/"
+   class="pure-button   ">
+    msk
+</a>
+
+                </div>
+            </div>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item ">
+                    <a href="/league/spb/" class="pure-menu-link">
+                      <img class="icon" src="./img/icons/ic_teams.svg" />
+                      Рейтинг команд
+                    </a>
+                </li>
+                <li class="pure-menu-item menu-item-divided pure-menu-selected">
+                    <a href="/league/spb/players/"
+                       class="pure-menu-link"><img class="icon" src="./img/icons/ic_players.svg" /> Рейтинг игроков</a>
+                </li>
+                <li class="pure-menu-item ">
+                    <a href="/league/spb/matches/" class="pure-menu-link"><img class="icon" src="./img/icons/ic_games.svg" /> Матчи</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+
+<div class="header">
+    <h1><span class="title__city">Сезон 2018 / </span>Рейтинг игроков</h1>
+    <div class="season-buttons">
+
+        <a class="pure-button pure-button-primary division-link"
+           id="tab-link-division-1"
+           onclick="openTab('division-1', 'division')">1й дивизион</a>
+
+        <a class="pure-button  division-link"
+           id="tab-link-division-2"
+           onclick="openTab('division-2', 'division')">2й дивизион</a>
+
+    </div>
+</div>
+
+
+<div class="content division tab-content-division" id="division-1"
+     style="display: block">
+    <table class="pure-table raiting-table table_style_default">
+        <thead>
+
+        <tr>
+            <th data-tooltip="Место" class="tooltip-top">#</th>
+            <th class="player-name-call">Имя</th>
+            <th class="team-call">Команда</th>
+            <th>И</th>
+            <th>З</th>
+            <th>П</th>
+            <th>РМ</th>
+        </tr>
+
+        </thead>
+        <tbody>
+
+        <tr>
+
+            <td class="count">1</td>
+            <td class="player-name-call">Листьев Денис <span class="team-span">SS</span></td>
+            <td class="team-call">Seven Sins</td>
+            <td class="TP">24</td>
+            <td class="GS">72</td>
+            <td class="GC">41</td>
+            <td class="GA">31</td>
+
+        </tr>
+
+        <tr>
+
+            <td class="count">2</td>
+            <td class="player-name-call">Захаров Николай <span class="team-span">GT</span></td>
+            <td class="team-call">Geek Team</td>
+            <td class="TP">25</td>
+            <td class="GS">72</td>
+            <td class="GC">48</td>
+            <td class="GA">24
+
+        </tr>
+
+        <tr>
+
+            <td class="count">3</td>
+            <td class="player-name-call">Полищук Сергей <span class="team-span">SS</span></td>
+            <td class="team-call">Peppers</td>
+            <td class="TP">34</td>
+            <td class="GS">91</td>
+            <td class="GC">68</td>
+            <td class="GA">23
+
+        </tr>
+
+        <tr>
+
+            <td class="count">4</td>
+            <td class="player-name-call">Богоявленский Владимир <span class="team-span">BBB</span></td>
+            <td class="team-call">Geek Team</td>
+            <td class="TP">15</td>
+            <td class="GS">44</td>
+            <td class="GC">24</td>
+            <td class="GA">20
+
+        </tr>
+
+        <tr>
+
+            <td class="count">5</td>
+            <td class="player-name-call">Жук Юрий <span class="team-span">S1S</span></td>
+            <td class="team-call">Peppers</td>
+            <td class="TP">16</td>
+            <td class="GS">46</td>
+            <td class="GC">34</td>
+            <td class="GA">12
+
+        </tr>
+
+        <tr>
+
+            <td class="count">6</td>
+            <td class="player-name-call">Колесин Иван <span class="team-span">S1S</span></td>
+            <td class="team-call">Wat</td>
+            <td class="TP">22</td>
+            <td class="GS">59</td>
+            <td class="GC">48</td>
+            <td class="GA">11
+
+        </tr>
+
+        <tr>
+
+            <td class="count">7</td>
+            <td class="player-name-call">Рожков Евгений</td>
+            <td class="team-call">Peppers</td>
+            <td class="TP">16</td>
+            <td class="GS">44</td>
+            <td class="GC">33</td>
+            <td class="GA">11
+
+        </tr>
+
+        <tr>
+
+            <td class="count">8</td>
+            <td class="player-name-call">Кольцов Евгений</td>
+            <td class="team-call">DataArt</td>
+            <td class="TP">32</td>
+            <td class="GS">80</td>
+            <td class="GC">70</td>
+            <td class="GA">10
+
+        </tr>
+
+        <tr>
+
+            <td class="count">9</td>
+            <td class="player-name-call">Медведева Юлия</td>
+            <td class="team-call">Wat</td>
+            <td class="TP">6</td>
+            <td class="GS">20</td>
+            <td class="GC">10</td>
+            <td class="GA">10
+
+        </tr>
+
+        <tr>
+
+            <td class="count">10</td>
+            <td class="player-name-call">Иванов Василий</td>
+            <td class="team-call">Geek Team</td>
+            <td class="TP">16</td>
+            <td class="GS">43</td>
+            <td class="GC">34</td>
+            <td class="GA">9
+
+        </tr>
+
+        <tr>
+
+            <td class="count">11</td>
+            <td class="player-name-call">Рыбаков Вадим</td>
+            <td class="team-call">Seven Sins</td>
+            <td class="TP">12</td>
+            <td class="GS">33</td>
+            <td class="GC">24</td>
+            <td class="GA">9
+
+        </tr>
+
+        <tr>
+
+            <td class="count">12</td>
+            <td class="player-name-call">Терехов Кирилл</td>
+            <td class="team-call">Peppers</td>
+            <td class="TP">26</td>
+            <td class="GS">67</td>
+            <td class="GC">59</td>
+            <td class="GA">8
+
+        </tr>
+
+        <tr>
+
+            <td class="count">13</td>
+            <td class="player-name-call">Деллеани Франко</td>
+            <td class="team-call">DataArt</td>
+            <td class="TP">17</td>
+            <td class="GS">43</td>
+            <td class="GC">36</td>
+            <td class="GA">7
+
+        </tr>
+
+        <tr>
+
+            <td class="count">14</td>
+            <td class="player-name-call">Чусова Наталия</td>
+            <td class="team-call">Peppers</td>
+            <td class="TP">5</td>
+            <td class="GS">16</td>
+            <td class="GC">9</td>
+            <td class="GA">7
+
+        </tr>
+
+        <tr>
+
+            <td class="count">15</td>
+            <td class="player-name-call">Забегалов Александр</td>
+            <td class="team-call">Seven Sins</td>
+            <td class="TP">30</td>
+            <td class="GS">76</td>
+            <td class="GC">69</td>
+            <td class="GA">7
+
+        </tr>
+
+        <tr>
+
+            <td class="count">16</td>
+            <td class="player-name-call">Пилин Константин</td>
+            <td class="team-call">Geek Team</td>
+            <td class="TP">25</td>
+            <td class="GS">65</td>
+            <td class="GC">58</td>
+            <td class="GA">7
+
+        </tr>
+
+        <tr>
+
+            <td class="count">17</td>
+            <td class="player-name-call">Холмогоров Николай</td>
+            <td class="team-call">Seven Sins</td>
+            <td class="TP">36</td>
+            <td class="GS">90</td>
+            <td class="GC">83</td>
+            <td class="GA">7
+
+        </tr>
+
+        <tr>
+
+            <td class="count">18</td>
+            <td class="player-name-call">Колышкин Андрей</td>
+            <td class="team-call">Wat</td>
+            <td class="TP">17</td>
+            <td class="GS">45</td>
+            <td class="GC">39</td>
+            <td class="GA">6
+
+        </tr>
+
+        <tr>
+
+            <td class="count">19</td>
+            <td class="player-name-call">Фандеев Данила</td>
+            <td class="team-call">Wat</td>
+            <td class="TP">17</td>
+            <td class="GS">44</td>
+            <td class="GC">38</td>
+            <td class="GA">6
+
+        </tr>
+
+        <tr>
+
+            <td class="count">20</td>
+            <td class="player-name-call">Шорохов Валентин</td>
+            <td class="team-call">Seven Sins</td>
+            <td class="TP">18</td>
+            <td class="GS">46</td>
+            <td class="GC">41</td>
+            <td class="GA">5
+
+        </tr>
+
+        <tr>
+
+            <td class="count">21</td>
+            <td class="player-name-call">Демченко Олеся</td>
+            <td class="team-call">Peppers</td>
+            <td class="TP">11</td>
+            <td class="GS">28</td>
+            <td class="GC">25</td>
+            <td class="GA">3
+
+        </tr>
+
+        <tr>
+
+            <td class="count">22</td>
+            <td class="player-name-call">Шустов Кирилл</td>
+            <td class="team-call">DataArt</td>
+            <td class="TP">8</td>
+            <td class="GS">21</td>
+            <td class="GC">19</td>
+            <td class="GA">2
+
+        </tr>
+
+        <tr>
+
+            <td class="count">23</td>
+            <td class="player-name-call">Васюк Владислав</td>
+            <td class="team-call">Geek Team</td>
+            <td class="TP">17</td>
+            <td class="GS">42</td>
+            <td class="GC">40</td>
+            <td class="GA">2
+
+        </tr>
+
+        <tr>
+
+            <td class="count">24</td>
+            <td class="player-name-call">Горячев Иван</td>
+            <td class="team-call">DataArt</td>
+            <td class="TP">35</td>
+            <td class="GS">83</td>
+            <td class="GC">81</td>
+            <td class="GA">2
+
+        </tr>
+
+        <tr>
+
+            <td class="count">25</td>
+            <td class="player-name-call">Киркоров Илья</td>
+            <td class="team-call">Дикие Ослы</td>
+            <td class="TP">16</td>
+            <td class="GS">39</td>
+            <td class="GC">37</td>
+            <td class="GA">2
+
+        </tr>
+
+        <tr>
+
+            <td class="count">26</td>
+            <td class="player-name-call">Аникин Георгий</td>
+            <td class="team-call">Geek Team</td>
+            <td class="TP">6</td>
+            <td class="GS">14</td>
+            <td class="GC">13</td>
+            <td class="GA">1
+
+        </tr>
+
+        <tr>
+
+            <td class="count">27</td>
+            <td class="player-name-call">Ипатова Мария</td>
+            <td class="team-call">Seven Sins</td>
+            <td class="TP">2</td>
+            <td class="GS">5</td>
+            <td class="GC">5</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">28</td>
+            <td class="player-name-call">Зеньков Александр</td>
+            <td class="team-call">5 girls 1 Paschenko</td>
+            <td class="TP">0</td>
+            <td class="GS">0</td>
+            <td class="GC">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">29</td>
+            <td class="player-name-call">Кириллова Татьяна</td>
+            <td class="team-call">Peppers</td>
+            <td class="TP">0</td>
+            <td class="GS">0</td>
+            <td class="GC">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">30</td>
+            <td class="player-name-call">Аксёнов Иван</td>
+            <td class="team-call">5 girls 1 Paschenko</td>
+            <td class="TP">0</td>
+            <td class="GS">0</td>
+            <td class="GC">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">31</td>
+            <td class="player-name-call">Попович Владимир</td>
+            <td class="team-call">Peppers</td>
+            <td class="TP">0</td>
+            <td class="GS">0</td>
+            <td class="GC">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">32</td>
+            <td class="player-name-call">Рубашкина Елена</td>
+            <td class="team-call">5 girls 1 Paschenko</td>
+            <td class="TP">0</td>
+            <td class="GS">0</td>
+            <td class="GC">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">33</td>
+            <td class="player-name-call">Лещёнок Наталья</td>
+            <td class="team-call">Wat</td>
+            <td class="TP">6</td>
+            <td class="GS">12</td>
+            <td class="GC">14</td>
+            <td class="GA">-2
+
+        </tr>
+
+        <tr>
+
+            <td class="count">34</td>
+            <td class="player-name-call">Лис Дмитрий</td>
+            <td class="team-call">Peppers</td>
+            <td class="TP">23</td>
+            <td class="GS">54</td>
+            <td class="GC">57</td>
+            <td class="GA">-3
+
+        </tr>
+
+        <tr>
+
+            <td class="count">35</td>
+            <td class="player-name-call">Косарева Екатерина</td>
+            <td class="team-call">Дикие Ослы</td>
+            <td class="TP">14</td>
+            <td class="GS">29</td>
+            <td class="GC">33</td>
+            <td class="GA">-4
+
+        </tr>
+
+        <tr>
+
+            <td class="count">36</td>
+            <td class="player-name-call">Багмет Никита</td>
+            <td class="team-call">Wat</td>
+            <td class="TP">4</td>
+            <td class="GS">6</td>
+            <td class="GC">10</td>
+            <td class="GA">-4
+
+        </tr>
+
+        <tr>
+
+            <td class="count">37</td>
+            <td class="player-name-call">Петров Александр</td>
+            <td class="team-call">Wat</td>
+            <td class="TP">19</td>
+            <td class="GS">45</td>
+            <td class="GC">49</td>
+            <td class="GA">-4
+
+        </tr>
+
+        <tr>
+
+            <td class="count">38</td>
+            <td class="player-name-call">Пащенко Николай</td>
+            <td class="team-call">5 girls 1 Paschenko</td>
+            <td class="TP">13</td>
+            <td class="GS">29</td>
+            <td class="GC">34</td>
+            <td class="GA">-5
+
+        </tr>
+
+        <tr>
+
+            <td class="count">39</td>
+            <td class="player-name-call">Шумилова Ольга</td>
+            <td class="team-call">5 girls 1 Paschenko</td>
+            <td class="TP">4</td>
+            <td class="GS">6</td>
+            <td class="GC">12</td>
+            <td class="GA">-6
+
+        </tr>
+
+        <tr>
+
+            <td class="count">40</td>
+            <td class="player-name-call">Божко Виктория</td>
+            <td class="team-call">DataArt</td>
+            <td class="TP">2</td>
+            <td class="GS">2</td>
+            <td class="GC">8</td>
+            <td class="GA">-6
+
+        </tr>
+
+        <tr>
+
+            <td class="count">41</td>
+            <td class="player-name-call">Кострыгин Владимир</td>
+            <td class="team-call">Geek Team</td>
+            <td class="TP">3</td>
+            <td class="GS">4</td>
+            <td class="GC">11</td>
+            <td class="GA">-7
+
+        </tr>
+
+        <tr>
+
+            <td class="count">42</td>
+            <td class="player-name-call">Рыбкина Александра</td>
+            <td class="team-call">5 girls 1 Paschenko</td>
+            <td class="TP">24</td>
+            <td class="GS">53</td>
+            <td class="GC">60</td>
+            <td class="GA">-7
+
+        </tr>
+
+        <tr>
+
+            <td class="count">43</td>
+            <td class="player-name-call">Кичигин Никита</td>
+            <td class="team-call">Seven Sins</td>
+            <td class="TP">17</td>
+            <td class="GS">39</td>
+            <td class="GC">46</td>
+            <td class="GA">-7
+
+        </tr>
+
+        <tr>
+
+            <td class="count">44</td>
+            <td class="player-name-call">Мишин Дмитрий</td>
+            <td class="team-call">Дикие Ослы</td>
+            <td class="TP">4</td>
+            <td class="GS">6</td>
+            <td class="GC">14</td>
+            <td class="GA">-8
+
+        </tr>
+
+        <tr>
+
+            <td class="count">45</td>
+            <td class="player-name-call">Юденко Александр</td>
+            <td class="team-call">5 girls 1 Paschenko</td>
+            <td class="TP">7</td>
+            <td class="GS">13</td>
+            <td class="GC">22</td>
+            <td class="GA">-9
+
+        </tr>
+
+        <tr>
+
+            <td class="count">46</td>
+            <td class="player-name-call">Коберда Николай</td>
+            <td class="team-call">Дикие Ослы</td>
+            <td class="TP">25</td>
+            <td class="GS">53</td>
+            <td class="GC">62</td>
+            <td class="GA">-9
+
+        </tr>
+
+        <tr>
+
+            <td class="count">47</td>
+            <td class="player-name-call">Санчурский Анатолий</td>
+            <td class="team-call">5 girls 1 Paschenko</td>
+            <td class="TP">16</td>
+            <td class="GS">32</td>
+            <td class="GC">43</td>
+            <td class="GA">-11
+
+        </tr>
+
+        <tr>
+
+            <td class="count">48</td>
+            <td class="player-name-call">Бурахович Андрей</td>
+            <td class="team-call">5 girls 1 Paschenko</td>
+            <td class="TP">6</td>
+            <td class="GS">8</td>
+            <td class="GC">20</td>
+            <td class="GA">-12
+
+        </tr>
+
+        <tr>
+
+            <td class="count">49</td>
+            <td class="player-name-call">Коник Виталий</td>
+            <td class="team-call">Дикие Ослы</td>
+            <td class="TP">27</td>
+            <td class="GS">59</td>
+            <td class="GC">71</td>
+            <td class="GA">-12
+
+        </tr>
+
+        <tr>
+
+            <td class="count">50</td>
+            <td class="player-name-call">Бакутина Анастасия</td>
+            <td class="team-call">5 girls 1 Paschenko</td>
+            <td class="TP">15</td>
+            <td class="GS">29</td>
+            <td class="GC">43</td>
+            <td class="GA">-14
+
+        </tr>
+
+        <tr>
+
+            <td class="count">51</td>
+            <td class="player-name-call">Хлебаев Алексей</td>
+            <td class="team-call">DataArt</td>
+            <td class="TP">10</td>
+            <td class="GS">15</td>
+            <td class="GC">32</td>
+            <td class="GA">-17
+
+        </tr>
+
+        <tr>
+
+            <td class="count">52</td>
+            <td class="player-name-call">Лапардин Владимир</td>
+            <td class="team-call">Дикие Ослы</td>
+            <td class="TP">33</td>
+            <td class="GS">71</td>
+            <td class="GC">89</td>
+            <td class="GA">-18
+
+        </tr>
+
+        <tr>
+
+            <td class="count">53</td>
+            <td class="player-name-call">Решетов Дмитрий</td>
+            <td class="team-call">DataArt</td>
+            <td class="TP">35</td>
+            <td class="GS">70</td>
+            <td class="GC">90</td>
+            <td class="GA">-20
+
+        </tr>
+
+        <tr>
+
+            <td class="count">54</td>
+            <td class="player-name-call">Дубко Артём</td>
+            <td class="team-call">Дикие Ослы</td>
+            <td class="TP">15</td>
+            <td class="GS">22</td>
+            <td class="GC">47</td>
+            <td class="GA">-25
+
+        </tr>
+
+        <tr>
+
+            <td class="count">55</td>
+            <td class="player-name-call">Трясцын Кирилл</td>
+            <td class="team-call">5 girls 1 Paschenko</td>
+            <td class="TP">20</td>
+            <td class="GS">34</td>
+            <td class="GC">66</td>
+            <td class="GA">-32
+
+        </tr>
+
+        </tbody>
+    </table>
+    <div class="glossary">
+        <div class="glossary_title">Глоссарий</div>
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">И</dt>
+            <dd class="gloss_transcript">Количество проведенных игр</dd>
+        </dl>
+
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">З</dt>
+            <dd class="gloss_transcript">Количество забитых мячей</dd>
+        </dl>
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">П</dt>
+            <dd class="gloss_transcript">Количество пропущенных мячей</dd>
+        </dl>
+
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">РМ</dt>
+            <dd class="gloss_transcript">Разница забитых и пропущенных мячей</dd>
+        </dl>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+<script src="/static/league/js/ui.js"></script>
+</body>
+
+</html>

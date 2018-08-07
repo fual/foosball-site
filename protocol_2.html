@@ -1,0 +1,307 @@
+<!doctype html>
+<!---
+Migration guide:
+1. на 19 и 23 строки подключены либы
+2. css/layouts/side-menu.css поменял фон
+3. <span class="set-card__team-img" style="background-image: url(img/places/jaws.jpg)"></span>
+если картинки нет - внутрь спана пихнуть сокращенное название в верхнем регистре
+4. Картинки для всех баров (москва и питер) есть
+5.
+--->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+    <title>Match#2</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+            <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/layouts/side-menu.css">
+            <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+        <!--<![endif]-->
+        <link rel="stylesheet" href="css/protocol.css">
+</head>
+<body>
+
+
+
+
+
+
+  <div id="layout">
+      <!-- Menu toggle -->
+      <div  class="moble-head">
+
+      <a id="menuLink" href="#menu"  class="menu-link moble-head__menu-link">
+          <!-- Hamburger icon -->
+          <span></span>
+      </a>
+
+      <span class="mobile-head__logo">FOOS LEAGUE</span>
+      <div class="moble-head__select-city">
+        <a class="pure-button">МСК</a>
+        <a class="pure-button pure-button-primary">СПБ</a>
+      </div>
+    </div>
+
+      <div id="menu">
+          <div class="pure-menu">
+              <div class="pure-menu-heading">
+                <span class="logo">FOOS LEAGUE</span>
+                <div class="pure-menu-heading__select-city">
+                  <a class="pure-button">Москва</a>
+                  <a class="pure-button pure-button-primary">СПБ</a>
+                </div>
+              </div>
+
+              <ul class="pure-menu-list">
+                  <li class="pure-menu-item"><a href="#" class="pure-menu-link">Рейтинг команд</a></li>
+                  <li class="pure-menu-item"><a href="#" class="pure-menu-link">Рейтинг игроков</a></li>
+
+                  <li class="pure-menu-item menu-item-divided pure-menu-selected">
+                      <a href="#" class="pure-menu-link">Матчи</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+
+      <div id="main">
+
+      <div class="match-header">
+        <div class="match-header__bar">
+          22 октября, «Дорогая, я перезвоню»
+        </div>
+        <div class="match-header__info" style="background-image: url(img/places/haratsMoscow.jpg)">
+          <div class="pure-g match-header__info-content">
+            <div class="match-header__team pure-u-8-24 pure-u-sm-8-24">
+              <img class="match-header__team-logo" src="img/teams/2018/spb/1/GT.jpg"/>
+            </div>
+            <div class="pure-u-8-24 pure-u-sm-8-24">
+              <div class="match-header__total-score">
+                2 <span class="match-header__score-separator">:</span> 2
+              </div>
+              <div class="match-header__sets-score">
+                5-2 по пенальти
+              </div>
+            </div>
+            <div class="match-header__team match-header__team_postion_right pure-u-8-24 pure-u-sm-8-24">
+              <span class="match-header__team-logo_text" style="">SKR</span>
+            </div>
+
+            <div class="pure-u-12-24 pure-u-sm-12-24 match-header__team-title match-header__team-title__position_left">
+            DrunkUnited2
+            </div>
+            <div class="pure-u-12-24 pure-u-sm-12-24 match-header__team-title match-header__team-title__position_right">
+              Научный
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+        <div class="content content-match">
+          <div class="pure-g">
+            <div class="pure-u-24-24 pure-u-sm-12-24 set-column_position_first">
+                    <table class="set-card">
+                      <tr>
+                        <td class="set-card__counter" rowspan="2">D1</td>
+                        <td class="set-card__team">
+                          <span class="set-card__team-text">FBI</span>
+                          <span class="set-card__team-img" style="background-image: url(img/teams/2018/spb/1/OSL.jpg)"></span>
+                        </td>
+                        <td class="set-card__player">Маркин А.<br/>Маркин А.</td>
+                        <td class="set-card__points set-card__points_winner_yes">4</td>
+                        <td class="set-card__points">2</td>
+                      </tr>
+                      <tr>
+                        <td class="set-card__team">
+                          <span class="set-card__team-text">FBI</span>
+                          <span class="set-card__team-img" style="background-image: url(img/teams/2018/spb/1/PPS.jpg)"></span>
+                        </td>
+                        <td class="set-card__player">Маркин А.<br/>Маркин А.</td>
+                        <td class="set-card__points">1</td>
+                        <td class="set-card__points set-card__points_winner_yes">3</td>
+                      </tr>
+                    </table>
+                    <table class="set-card">
+                      <tr>
+                        <td class="set-card__counter" rowspan="2">D2</td>
+
+                          <td class="set-card__team">
+                            <span class="set-card__team-text">FBI</span>
+                            <span class="set-card__team-img" style="background-image: url(img/teams/2018/spb/1/FST.jpg)"></span>
+                          </td>
+                        <td class="set-card__player">Маркин А.<br/>Маркин А.</td>
+                        <td class="set-card__points set-card__points_winner_yes">4</td>
+                        <td class="set-card__points">2</td>
+                      </tr>
+                      <tr>
+
+                          <td class="set-card__team">
+                            <span class="set-card__team-text">FBI</span>
+                            <span class="set-card__team-img" style="">WAT</span>
+                          </td>
+                        <td class="set-card__player">Маркин А.<br/>Мирошниченко А.</td>
+                        <td class="set-card__points">1</td>
+                        <td class="set-card__points set-card__points_winner_yes">3</td>
+                      </tr>
+                    </table>
+                    <table class="set-card">
+                      <tr>
+                        <td class="set-card__counter" rowspan="2">S1</td>
+                        <td class="set-card__team">
+                          <span class="set-card__team-text">FBI</span>
+                          <span class="set-card__team-img" style="background-image: url(img/teams/2018/spb/1/GT.jpg)"></span>
+                        </td>
+                        <td class="set-card__player">Маркин А.</td>
+                        <td class="set-card__points set-card__points_winner_yes">4</td>
+                        <td class="set-card__points">2</td>
+                      </tr>
+                      <tr>
+                        <td class="set-card__team">
+                          <span class="set-card__team-text">FBI</span>
+                          <span class="set-card__team-img" style="background-image: url(img/teams/2018/spb/1/DA.jpg)"></span>
+                        </td>
+                        <td class="set-card__player">Мирошниченко А.</td>
+                        <td class="set-card__points">1</td>
+                        <td class="set-card__points set-card__points_winner_yes">3</td>
+                      </tr>
+                    </table>
+                  </div>
+
+
+                    <div class="pure-u-24-24  pure-u-sm-12-24 set-column_position_second">
+
+
+                                        <table class="set-card">
+                                          <tr>
+                                            <td class="set-card__counter" rowspan="2">S2</td>
+                                            <td class="set-card__team">
+                                              <span class="set-card__team-text">FBI</span>
+                                              <span class="set-card__team-img" style="background-image: url(img/teams/2018/spb/1/GT.jpg)"></span>
+                                            </td>
+                                            <td class="set-card__player">Маркин А.</td>
+                                            <td class="set-card__points set-card__points_winner_yes">4</td>
+                                            <td class="set-card__points">2</td>
+                                          </tr>
+                                          <tr>
+                                            <td class="set-card__team">
+                                              <span class="set-card__team-text">FBI</span>
+                                              <span class="set-card__team-img" style="background-image: url(img/teams/2018/spb/1/DA.jpg)"></span>
+                                            </td>
+                                            <td class="set-card__player">Мирошниченко А.</td>
+                                            <td class="set-card__points">1</td>
+                                            <td class="set-card__points set-card__points_winner_yes">3</td>
+                                          </tr>
+                                        </table>
+                                        <table class="set-card">
+                                          <tr>
+                                            <td class="set-card__counter" rowspan="2">D3</td>
+                                            <td class="set-card__team">
+                                              <span class="set-card__team-text">FBI</span>
+                                              <span class="set-card__team-img" style="background-image: url(img/teams/2018/spb/1/GT.jpg)"></span>
+                                            </td>
+                                            <td class="set-card__player">Маркин А.<br/>Маркин А.</td>
+                                            <td class="set-card__points set-card__points_winner_yes">4</td>
+                                            <td class="set-card__points">2</td>
+                                          </tr>
+                                          <tr>
+                                            <td class="set-card__team">
+                                              <span class="set-card__team-text">FBI</span>
+                                              <span class="set-card__team-img" style="background-image: url(img/teams/2018/spb/1/DA.jpg)"></span>
+                                            </td>
+                                            <td class="set-card__player">Маркин А.<br/>Маркин А.</td>
+                                            <td class="set-card__points">1</td>
+                                            <td class="set-card__points set-card__points_winner_yes">3</td>
+                                          </tr>
+                                        </table>
+                                        <table class="set-card">
+                                          <tr>
+                                            <td class="set-card__counter" rowspan="2">D4</td>
+
+                                              <td class="set-card__team">
+                                                <span class="set-card__team-text">FBI</span>
+                                                <span class="set-card__team-img" style="background-image: url(img/teams/2018/spb/1/GT.jpg)"></span>
+                                              </td>
+                                            <td class="set-card__player">Маркин А.<br/>Маркин А.</td>
+                                            <td class="set-card__points set-card__points_winner_yes">4</td>
+                                            <td class="set-card__points">2</td>
+                                          </tr>
+                                          <tr>
+
+                                              <td class="set-card__team">
+                                                <span class="set-card__team-text">FBI</span>
+                                                <span class="set-card__team-img" style="background-image: url(img/teams/2018/spb/1/DA.jpg)"></span>
+                                              </td>
+                                            <td class="set-card__player">Маркин А.<br/>Мирошниченко А.</td>
+                                            <td class="set-card__points">1</td>
+                                            <td class="set-card__points set-card__points_winner_yes">3</td>
+                                          </tr>
+                                        </table>
+
+                  </div>
+              </div>
+              <h3 class="penalti-title">Пенальти (5-2) </h3>
+              <div class="pure-g">
+                <div class="pure-u-24-24 pure-u-sm-12-24 penalti-table-wrapper">
+              <table class="penalti-table">
+                <tr>
+                  <td class="penalti-table__counter">1</td>
+                  <td class="penalti-table__player">Bdf А.</td>
+                  <td class="penalti-table__points penalti-table__points_winner_yes">1</td>
+                  <td class="penalti-table__points">0</td>
+                  <td class="penalti-table__player">Богоявленский</td>
+                </tr>
+                <tr>
+                  <td class="penalti-table__counter">2</td>
+                  <td class="penalti-table__player">Маркин А.</td>
+                  <td class="penalti-table__points penalti-table__points_winner_yes">1</td>
+                  <td class="penalti-table__points penalti-table__points_winner_yes">1</td>
+
+
+                  <td class="penalti-table__player">Маркин А.</td>
+                </tr>
+                <tr>
+                  <td class="penalti-table__counter">3</td>
+                  <td class="penalti-table__player">Мрошниченко А.</td>
+                  <td class="penalti-table__points ">0</td>
+                  <td class="penalti-table__points penalti-table__points_winner_yes">1</td>
+                  <td class="penalti-table__player">Ким Дон Джин</td>
+                </tr>
+                <tr>
+                  <td class="penalti-table__counter" >4</td>
+                  <td class="penalti-table__player">Маркин А.</td>
+                  <td class="penalti-table__points penalti-table__points_winner_yes">1</td>
+                  <td class="penalti-table__points">0</td>
+                  <td class="penalti-table__player">МирошниченкоМирошниченкоМирошниченко А.</td>
+                </tr>
+                <tr>
+                  <td class="penalti-table__counter" >5</td>
+                  <td class="penalti-table__player">Маркин А.</td>
+                  <td class="penalti-table__points penalti-table__points_winner_yes">1</td>
+                  <td class="penalti-table__points">0</td>
+                  <td class="penalti-table__player">Маркин А.</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+
+          </div>
+        </div>
+</div>
+
+
+
+<script src="js/ui.js"></script>
+
+</body>
+</html>

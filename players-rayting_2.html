@@ -1,0 +1,4111 @@
+<!doctype html>
+<!---
+Migration guide:
+1. на 19 и 23 строки подключены либы
+2. css/layouts/side-menu.css поменял фон
+3. <span class="set-card__team-img" style="background-image: url(img/places/jaws.jpg)"></span>
+если картинки нет - внутрь спана пихнуть сокращенное название в верхнем регистре
+4. Картинки для всех баров (москва и питер) есть
+5.
+--->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+    <title>Match#2</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+            <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/layouts/side-menu.css">
+            <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+        <!--<![endif]-->
+        <link rel="stylesheet" href="css/protocol.css">
+</head>
+<body>
+
+<body>
+<div id="layout">
+    <!-- Menu toggle -->
+    <div class="moble-head">
+        <a id="menuLink" href="#menu" class="menu-link moble-head__menu-link">
+            <!-- Hamburger icon -->
+            <span></span>
+        </a>
+        <span class="mobile-head__logo">FOOS LEAGUE</span>
+        <div class="moble-head__select-city">
+
+<a href="/league/spb/"
+   class="pure-button  pure-button-primary ">
+    spb
+</a>
+
+<a href="/league/msk/"
+   class="pure-button   ">
+    msk
+</a>
+
+        </div>
+    </div>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <div class="pure-menu-heading">
+                <span class="logo">FOOS LEAGUE</span>
+                <div class="pure-menu-heading__select-city">
+
+<a href="/league/spb/"
+   class="pure-button  pure-button-primary ">
+    spb
+</a>
+
+<a href="/league/msk/"
+   class="pure-button   ">
+    msk
+</a>
+
+                </div>
+            </div>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item ">
+                    <a href="/league/spb/" class="pure-menu-link">
+                      <img class="icon" src="./img/icons/ic_teams.svg" />
+                      Рейтинг команд
+                    </a>
+                </li>
+                <li class="pure-menu-item menu-item-divided pure-menu-selected">
+                    <a href="/league/spb/players/"
+                       class="pure-menu-link"><img class="icon" src="./img/icons/ic_players.svg" /> Рейтинг игроков</a>
+                </li>
+                <li class="pure-menu-item ">
+                    <a href="/league/spb/matches/" class="pure-menu-link"><img class="icon" src="./img/icons/ic_games.svg" /> Матчи</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+
+<div class="header">
+    <h1><span class="title__city">Сезон 2018 / </span>Рейтинг игроков</h1>
+    <div class="season-buttons">
+
+        <a class="pure-button pure-button-primary division-link"
+           id="tab-link-division-1"
+           onclick="openTab('division-1', 'division')">1й дивизион</a>
+
+        <a class="pure-button  division-link"
+           id="tab-link-division-2"
+           onclick="openTab('division-2', 'division')">2й дивизион</a>
+
+    </div>
+</div>
+
+
+<div class="content division tab-content-division" id="division-2"
+     style="display:">
+    <table class="pure-table raiting-table table_style_default">
+        <thead>
+
+        <tr class="description">
+            <th colspan="3">
+            </th>
+            <th colspan="5">
+                Всего
+            </th>
+            <th colspan="5">
+                Одиночки
+            </th>
+            <th colspan="5">
+                Пары
+            </th>
+            <th class="goals">
+            </th>
+        </tr>
+        <tr class="description-full">
+            <th data-tooltip="Место" name="count" class="tooltip-top">#</th>
+            <th class="player-name-call">Имя</th>
+            <th class="team-call">Команда</th>
+            <th class="TP">И</th>
+            <th class="TW">В</th>
+            <th class="TD">Н</th>
+            <th class="TL">П</th>
+            <th class="TA">Р</th>
+
+            <th class="SP">И</th>
+            <th class="SW">В</th>
+            <th class="SD">Н</th>
+            <th class="SL">П</th>
+            <th class="SA">Р</th>
+
+            <th class="DP">И</th>
+            <th class="DW">В</th>
+            <th class="DD">Н</th>
+            <th class="DL">П</th>
+            <th class="DA">Р</th>
+            <th class="GA">РМ</th>
+        </tr>
+
+        </thead>
+        <tbody>
+
+        <tr>
+
+            <td class="count">1</td>
+            <td class="player-name-call">Спирин Нил <span class="team-span">S1S</span></td>
+            <td class="team-call">PP</td>
+            <td class="TP">16</td>
+            <td class="TW">11</td>
+            <td class="TD">4</td>
+            <td class="TL">1</td>
+            <td class="TA">10</td>
+            <td class="SP">7</td>
+            <td class="SW">4</td>
+            <td class="SD">3</td>
+            <td class="SL">0</td>
+            <td class="SA">4</td>
+            <td class="DP">9</td>
+            <td class="DW">7</td>
+            <td class="DD">1</td>
+            <td class="DL">1</td>
+            <td class="DA">6</td>
+            <td class="GA">66
+
+        </tr>
+
+        <tr>
+
+            <td class="count">2</td>
+            <td class="player-name-call">Хлебаев Алексей <span class="team-span">S1S</span></td>
+            <td class="team-call">RZQ</td>
+            <td class="TP">14</td>
+            <td class="TW">10</td>
+            <td class="TD">4</td>
+            <td class="TL">0</td>
+            <td class="TA">10</td>
+            <td class="SP">7</td>
+            <td class="SW">3</td>
+            <td class="SD">4</td>
+            <td class="SL">0</td>
+            <td class="SA">3</td>
+            <td class="DP">7</td>
+            <td class="DW">7</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">7</td>
+            <td class="GA">58
+
+        </tr>
+
+        <tr>
+
+            <td class="count">3</td>
+            <td class="player-name-call">Саблин Григорий <span class="team-span">S1S</span></td>
+            <td class="team-call">АКМ</td>
+            <td class="TP">16</td>
+            <td class="TW">9</td>
+            <td class="TD">6</td>
+            <td class="TL">1</td>
+            <td class="TA">8</td>
+            <td class="SP">7</td>
+            <td class="SW">4</td>
+            <td class="SD">3</td>
+            <td class="SL">0</td>
+            <td class="SA">4</td>
+            <td class="DP">9</td>
+            <td class="DW">5</td>
+            <td class="DD">3</td>
+            <td class="DL">1</td>
+            <td class="DA">4</td>
+            <td class="GA">59
+
+        </tr>
+
+        <tr>
+
+            <td class="count">4</td>
+            <td class="player-name-call">Петров Александр</td>
+            <td class="team-call">ВП</td>
+            <td class="TP">14</td>
+            <td class="TW">9</td>
+            <td class="TD">4</td>
+            <td class="TL">1</td>
+            <td class="TA">8</td>
+            <td class="SP">7</td>
+            <td class="SW">4</td>
+            <td class="SD">3</td>
+            <td class="SL">0</td>
+            <td class="SA">4</td>
+            <td class="DP">7</td>
+            <td class="DW">5</td>
+            <td class="DD">1</td>
+            <td class="DL">1</td>
+            <td class="DA">4</td>
+            <td class="GA">35
+
+        </tr>
+
+        <tr>
+
+            <td class="count">5</td>
+            <td class="player-name-call">Шабалин Александр</td>
+            <td class="team-call">DS</td>
+            <td class="TP">16</td>
+            <td class="TW">9</td>
+            <td class="TD">6</td>
+            <td class="TL">1</td>
+            <td class="TA">8</td>
+            <td class="SP">8</td>
+            <td class="SW">4</td>
+            <td class="SD">3</td>
+            <td class="SL">1</td>
+            <td class="SA">3</td>
+            <td class="DP">8</td>
+            <td class="DW">5</td>
+            <td class="DD">3</td>
+            <td class="DL">0</td>
+            <td class="DA">5</td>
+            <td class="GA">58
+
+        </tr>
+
+        <tr>
+
+            <td class="count">6</td>
+            <td class="player-name-call">Султанов Линар</td>
+            <td class="team-call">RZQ</td>
+            <td class="TP">10</td>
+            <td class="TW">8</td>
+            <td class="TD">2</td>
+            <td class="TL">0</td>
+            <td class="TA">8</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">10</td>
+            <td class="DW">8</td>
+            <td class="DD">2</td>
+            <td class="DL">0</td>
+            <td class="DA">8</td>
+            <td class="GA">42
+
+        </tr>
+
+        <tr>
+
+            <td class="count">7</td>
+            <td class="player-name-call">Разживин Данил</td>
+            <td class="team-call">DS</td>
+            <td class="TP">14</td>
+            <td class="TW">8</td>
+            <td class="TD">5</td>
+            <td class="TL">1</td>
+            <td class="TA">7</td>
+            <td class="SP">5</td>
+            <td class="SW">4</td>
+            <td class="SD">1</td>
+            <td class="SL">0</td>
+            <td class="SA">4</td>
+            <td class="DP">9</td>
+            <td class="DW">4</td>
+            <td class="DD">4</td>
+            <td class="DL">1</td>
+            <td class="DA">3</td>
+            <td class="GA">43
+
+        </tr>
+
+        <tr>
+
+            <td class="count">8</td>
+            <td class="player-name-call">Захаров Николай</td>
+            <td class="team-call">SV</td>
+            <td class="TP">11</td>
+            <td class="TW">9</td>
+            <td class="TD">0</td>
+            <td class="TL">2</td>
+            <td class="TA">7</td>
+            <td class="SP">2</td>
+            <td class="SW">2</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">2</td>
+            <td class="DP">9</td>
+            <td class="DW">7</td>
+            <td class="DD">0</td>
+            <td class="DL">2</td>
+            <td class="DA">5</td>
+            <td class="GA">46
+
+        </tr>
+
+        <tr>
+
+            <td class="count">9</td>
+            <td class="player-name-call">Киркоров Илья</td>
+            <td class="team-call">PP</td>
+            <td class="TP">12</td>
+            <td class="TW">8</td>
+            <td class="TD">3</td>
+            <td class="TL">1</td>
+            <td class="TA">7</td>
+            <td class="SP">5</td>
+            <td class="SW">2</td>
+            <td class="SD">2</td>
+            <td class="SL">1</td>
+            <td class="SA">1</td>
+            <td class="DP">7</td>
+            <td class="DW">6</td>
+            <td class="DD">1</td>
+            <td class="DL">0</td>
+            <td class="DA">6</td>
+            <td class="GA">51
+
+        </tr>
+
+        <tr>
+
+            <td class="count">10</td>
+            <td class="player-name-call">Холмогоров Николай</td>
+            <td class="team-call">АКМ</td>
+            <td class="TP">13</td>
+            <td class="TW">7</td>
+            <td class="TD">5</td>
+            <td class="TL">1</td>
+            <td class="TA">6</td>
+            <td class="SP">4</td>
+            <td class="SW">4</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">4</td>
+            <td class="DP">9</td>
+            <td class="DW">3</td>
+            <td class="DD">5</td>
+            <td class="DL">1</td>
+            <td class="DA">2</td>
+            <td class="GA">45
+
+        </tr>
+
+        <tr>
+
+            <td class="count">11</td>
+            <td class="player-name-call">Коберда Николай</td>
+            <td class="team-call">HMN</td>
+            <td class="TP">14</td>
+            <td class="TW">9</td>
+            <td class="TD">2</td>
+            <td class="TL">3</td>
+            <td class="TA">6</td>
+            <td class="SP">8</td>
+            <td class="SW">5</td>
+            <td class="SD">1</td>
+            <td class="SL">2</td>
+            <td class="SA">3</td>
+            <td class="DP">6</td>
+            <td class="DW">4</td>
+            <td class="DD">1</td>
+            <td class="DL">1</td>
+            <td class="DA">3</td>
+            <td class="GA">37
+
+        </tr>
+
+        <tr>
+
+            <td class="count">12</td>
+            <td class="player-name-call">Борисов Дмитрий</td>
+            <td class="team-call">БШ</td>
+            <td class="TP">18</td>
+            <td class="TW">10</td>
+            <td class="TD">4</td>
+            <td class="TL">4</td>
+            <td class="TA">6</td>
+            <td class="SP">9</td>
+            <td class="SW">5</td>
+            <td class="SD">0</td>
+            <td class="SL">4</td>
+            <td class="SA">1</td>
+            <td class="DP">9</td>
+            <td class="DW">5</td>
+            <td class="DD">4</td>
+            <td class="DL">0</td>
+            <td class="DA">5</td>
+            <td class="GA">24
+
+        </tr>
+
+        <tr>
+
+            <td class="count">13</td>
+            <td class="player-name-call">Шилкина Юлия</td>
+            <td class="team-call">PP</td>
+            <td class="TP">11</td>
+            <td class="TW">8</td>
+            <td class="TD">1</td>
+            <td class="TL">2</td>
+            <td class="TA">6</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">11</td>
+            <td class="DW">8</td>
+            <td class="DD">1</td>
+            <td class="DL">2</td>
+            <td class="DA">6</td>
+            <td class="GA">43
+
+        </tr>
+
+        <tr>
+
+            <td class="count">14</td>
+            <td class="player-name-call">Прокопенко Стефан</td>
+            <td class="team-call">LP</td>
+            <td class="TP">12</td>
+            <td class="TW">8</td>
+            <td class="TD">2</td>
+            <td class="TL">2</td>
+            <td class="TA">6</td>
+            <td class="SP">1</td>
+            <td class="SW">0</td>
+            <td class="SD">1</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">11</td>
+            <td class="DW">8</td>
+            <td class="DD">1</td>
+            <td class="DL">2</td>
+            <td class="DA">6</td>
+            <td class="GA">25
+
+        </tr>
+
+        <tr>
+
+            <td class="count">15</td>
+            <td class="player-name-call">Решетов Дмитрий</td>
+            <td class="team-call">DS</td>
+            <td class="TP">16</td>
+            <td class="TW">10</td>
+            <td class="TD">2</td>
+            <td class="TL">4</td>
+            <td class="TA">6</td>
+            <td class="SP">2</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">2</td>
+            <td class="SA">-2</td>
+            <td class="DP">14</td>
+            <td class="DW">10</td>
+            <td class="DD">2</td>
+            <td class="DL">2</td>
+            <td class="DA">8</td>
+            <td class="GA">47
+
+        </tr>
+
+        <tr>
+
+            <td class="count">16</td>
+            <td class="player-name-call">Богоявленский Владимир</td>
+            <td class="team-call">FST</td>
+            <td class="TP">6</td>
+            <td class="TW">5</td>
+            <td class="TD">1</td>
+            <td class="TL">0</td>
+            <td class="TA">5</td>
+            <td class="SP">3</td>
+            <td class="SW">3</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">3</td>
+            <td class="DP">3</td>
+            <td class="DW">2</td>
+            <td class="DD">1</td>
+            <td class="DL">0</td>
+            <td class="DA">2</td>
+            <td class="GA">33
+
+        </tr>
+
+        <tr>
+
+            <td class="count">17</td>
+            <td class="player-name-call">Махинько Макар</td>
+            <td class="team-call">PP</td>
+            <td class="TP">12</td>
+            <td class="TW">6</td>
+            <td class="TD">5</td>
+            <td class="TL">1</td>
+            <td class="TA">5</td>
+            <td class="SP">4</td>
+            <td class="SW">2</td>
+            <td class="SD">2</td>
+            <td class="SL">0</td>
+            <td class="SA">2</td>
+            <td class="DP">8</td>
+            <td class="DW">4</td>
+            <td class="DD">3</td>
+            <td class="DL">1</td>
+            <td class="DA">3</td>
+            <td class="GA">34
+
+        </tr>
+
+        <tr>
+
+            <td class="count">18</td>
+            <td class="player-name-call">Васюк Владислав</td>
+            <td class="team-call">РПК</td>
+            <td class="TP">9</td>
+            <td class="TW">6</td>
+            <td class="TD">2</td>
+            <td class="TL">1</td>
+            <td class="TA">5</td>
+            <td class="SP">5</td>
+            <td class="SW">3</td>
+            <td class="SD">1</td>
+            <td class="SL">1</td>
+            <td class="SA">2</td>
+            <td class="DP">4</td>
+            <td class="DW">3</td>
+            <td class="DD">1</td>
+            <td class="DL">0</td>
+            <td class="DA">3</td>
+            <td class="GA">31
+
+        </tr>
+
+        <tr>
+
+            <td class="count">19</td>
+            <td class="player-name-call">Панащук Вячеслав</td>
+            <td class="team-call">FST</td>
+            <td class="TP">10</td>
+            <td class="TW">6</td>
+            <td class="TD">3</td>
+            <td class="TL">1</td>
+            <td class="TA">5</td>
+            <td class="SP">5</td>
+            <td class="SW">3</td>
+            <td class="SD">1</td>
+            <td class="SL">1</td>
+            <td class="SA">2</td>
+            <td class="DP">5</td>
+            <td class="DW">3</td>
+            <td class="DD">2</td>
+            <td class="DL">0</td>
+            <td class="DA">3</td>
+            <td class="GA">25
+
+        </tr>
+
+        <tr>
+
+            <td class="count">20</td>
+            <td class="player-name-call">Могилин Алексей</td>
+            <td class="team-call">RZQ</td>
+            <td class="TP">11</td>
+            <td class="TW">6</td>
+            <td class="TD">4</td>
+            <td class="TL">1</td>
+            <td class="TA">5</td>
+            <td class="SP">2</td>
+            <td class="SW">1</td>
+            <td class="SD">1</td>
+            <td class="SL">0</td>
+            <td class="SA">1</td>
+            <td class="DP">9</td>
+            <td class="DW">5</td>
+            <td class="DD">3</td>
+            <td class="DL">1</td>
+            <td class="DA">4</td>
+            <td class="GA">24
+
+        </tr>
+
+        <tr>
+
+            <td class="count">21</td>
+            <td class="player-name-call">Андрусенко Евгений</td>
+            <td class="team-call">LP</td>
+            <td class="TP">10</td>
+            <td class="TW">6</td>
+            <td class="TD">3</td>
+            <td class="TL">1</td>
+            <td class="TA">5</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">10</td>
+            <td class="DW">6</td>
+            <td class="DD">3</td>
+            <td class="DL">1</td>
+            <td class="DA">5</td>
+            <td class="GA">24
+
+        </tr>
+
+        <tr>
+
+            <td class="count">22</td>
+            <td class="player-name-call">Михайлов Максим</td>
+            <td class="team-call">АКМ</td>
+            <td class="TP">16</td>
+            <td class="TW">8</td>
+            <td class="TD">5</td>
+            <td class="TL">3</td>
+            <td class="TA">5</td>
+            <td class="SP">5</td>
+            <td class="SW">2</td>
+            <td class="SD">0</td>
+            <td class="SL">3</td>
+            <td class="SA">-1</td>
+            <td class="DP">11</td>
+            <td class="DW">6</td>
+            <td class="DD">5</td>
+            <td class="DL">0</td>
+            <td class="DA">6</td>
+            <td class="GA">50
+
+        </tr>
+
+        <tr>
+
+            <td class="count">23</td>
+            <td class="player-name-call">Протасова Валерия</td>
+            <td class="team-call">FST</td>
+            <td class="TP">10</td>
+            <td class="TW">5</td>
+            <td class="TD">4</td>
+            <td class="TL">1</td>
+            <td class="TA">4</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">10</td>
+            <td class="DW">5</td>
+            <td class="DD">4</td>
+            <td class="DL">1</td>
+            <td class="DA">4</td>
+            <td class="GA">25
+
+        </tr>
+
+        <tr>
+
+            <td class="count">24</td>
+            <td class="player-name-call">Литвинов Сергей</td>
+            <td class="team-call">FST</td>
+            <td class="TP">6</td>
+            <td class="TW">4</td>
+            <td class="TD">2</td>
+            <td class="TL">0</td>
+            <td class="TA">4</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">6</td>
+            <td class="DW">4</td>
+            <td class="DD">2</td>
+            <td class="DL">0</td>
+            <td class="DA">4</td>
+            <td class="GA">25
+
+        </tr>
+
+        <tr>
+
+            <td class="count">25</td>
+            <td class="player-name-call">Максименко Александр</td>
+            <td class="team-call">БШ</td>
+            <td class="TP">18</td>
+            <td class="TW">6</td>
+            <td class="TD">10</td>
+            <td class="TL">2</td>
+            <td class="TA">4</td>
+            <td class="SP">7</td>
+            <td class="SW">1</td>
+            <td class="SD">5</td>
+            <td class="SL">1</td>
+            <td class="SA">0</td>
+            <td class="DP">11</td>
+            <td class="DW">5</td>
+            <td class="DD">5</td>
+            <td class="DL">1</td>
+            <td class="DA">4</td>
+            <td class="GA">22
+
+        </tr>
+
+        <tr>
+
+            <td class="count">26</td>
+            <td class="player-name-call">Филаретов Андрей</td>
+            <td class="team-call">DS</td>
+            <td class="TP">9</td>
+            <td class="TW">5</td>
+            <td class="TD">3</td>
+            <td class="TL">1</td>
+            <td class="TA">4</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">9</td>
+            <td class="DW">5</td>
+            <td class="DD">3</td>
+            <td class="DL">1</td>
+            <td class="DA">4</td>
+            <td class="GA">21
+
+        </tr>
+
+        <tr>
+
+            <td class="count">27</td>
+            <td class="player-name-call">Курбанов Ферх</td>
+            <td class="team-call">HMN</td>
+            <td class="TP">13</td>
+            <td class="TW">6</td>
+            <td class="TD">4</td>
+            <td class="TL">3</td>
+            <td class="TA">3</td>
+            <td class="SP">6</td>
+            <td class="SW">4</td>
+            <td class="SD">2</td>
+            <td class="SL">0</td>
+            <td class="SA">4</td>
+            <td class="DP">7</td>
+            <td class="DW">2</td>
+            <td class="DD">2</td>
+            <td class="DL">3</td>
+            <td class="DA">-1</td>
+            <td class="GA">26
+
+        </tr>
+
+        <tr>
+
+            <td class="count">28</td>
+            <td class="player-name-call">Зеньков Александр</td>
+            <td class="team-call">PS</td>
+            <td class="TP">13</td>
+            <td class="TW">5</td>
+            <td class="TD">6</td>
+            <td class="TL">2</td>
+            <td class="TA">3</td>
+            <td class="SP">6</td>
+            <td class="SW">4</td>
+            <td class="SD">1</td>
+            <td class="SL">1</td>
+            <td class="SA">3</td>
+            <td class="DP">7</td>
+            <td class="DW">1</td>
+            <td class="DD">5</td>
+            <td class="DL">1</td>
+            <td class="DA">0</td>
+            <td class="GA">11
+
+        </tr>
+
+        <tr>
+
+            <td class="count">29</td>
+            <td class="player-name-call">Кулагин Кирилл</td>
+            <td class="team-call">ВП</td>
+            <td class="TP">6</td>
+            <td class="TW">4</td>
+            <td class="TD">1</td>
+            <td class="TL">1</td>
+            <td class="TA">3</td>
+            <td class="SP">2</td>
+            <td class="SW">2</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">2</td>
+            <td class="DP">4</td>
+            <td class="DW">2</td>
+            <td class="DD">1</td>
+            <td class="DL">1</td>
+            <td class="DA">1</td>
+            <td class="GA">23
+
+        </tr>
+
+        <tr>
+
+            <td class="count">30</td>
+            <td class="player-name-call">Бенбарка Ахмед</td>
+            <td class="team-call">GS</td>
+            <td class="TP">8</td>
+            <td class="TW">3</td>
+            <td class="TD">5</td>
+            <td class="TL">0</td>
+            <td class="TA">3</td>
+            <td class="SP">4</td>
+            <td class="SW">2</td>
+            <td class="SD">2</td>
+            <td class="SL">0</td>
+            <td class="SA">2</td>
+            <td class="DP">4</td>
+            <td class="DW">1</td>
+            <td class="DD">3</td>
+            <td class="DL">0</td>
+            <td class="DA">1</td>
+            <td class="GA">21
+
+        </tr>
+
+        <tr>
+
+            <td class="count">31</td>
+            <td class="player-name-call">Смажевский Михаил</td>
+            <td class="team-call">LP</td>
+            <td class="TP">7</td>
+            <td class="TW">4</td>
+            <td class="TD">2</td>
+            <td class="TL">1</td>
+            <td class="TA">3</td>
+            <td class="SP">3</td>
+            <td class="SW">2</td>
+            <td class="SD">1</td>
+            <td class="SL">0</td>
+            <td class="SA">2</td>
+            <td class="DP">4</td>
+            <td class="DW">2</td>
+            <td class="DD">1</td>
+            <td class="DL">1</td>
+            <td class="DA">1</td>
+            <td class="GA">17
+
+        </tr>
+
+        <tr>
+
+            <td class="count">32</td>
+            <td class="player-name-call">Асатуров Лев</td>
+            <td class="team-call">FST</td>
+            <td class="TP">4</td>
+            <td class="TW">3</td>
+            <td class="TD">1</td>
+            <td class="TL">0</td>
+            <td class="TA">3</td>
+            <td class="SP">1</td>
+            <td class="SW">1</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">1</td>
+            <td class="DP">3</td>
+            <td class="DW">2</td>
+            <td class="DD">1</td>
+            <td class="DL">0</td>
+            <td class="DA">2</td>
+            <td class="GA">19
+
+        </tr>
+
+        <tr>
+
+            <td class="count">33</td>
+            <td class="player-name-call">Рыбин Дмитрий</td>
+            <td class="team-call">FST</td>
+            <td class="TP">6</td>
+            <td class="TW">4</td>
+            <td class="TD">1</td>
+            <td class="TL">1</td>
+            <td class="TA">3</td>
+            <td class="SP">1</td>
+            <td class="SW">1</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">1</td>
+            <td class="DP">5</td>
+            <td class="DW">3</td>
+            <td class="DD">1</td>
+            <td class="DL">1</td>
+            <td class="DA">2</td>
+            <td class="GA">18
+
+        </tr>
+
+        <tr>
+
+            <td class="count">34</td>
+            <td class="player-name-call">Резник Антон</td>
+            <td class="team-call">RZQ</td>
+            <td class="TP">9</td>
+            <td class="TW">4</td>
+            <td class="TD">4</td>
+            <td class="TL">1</td>
+            <td class="TA">3</td>
+            <td class="SP">4</td>
+            <td class="SW">2</td>
+            <td class="SD">1</td>
+            <td class="SL">1</td>
+            <td class="SA">1</td>
+            <td class="DP">5</td>
+            <td class="DW">2</td>
+            <td class="DD">3</td>
+            <td class="DL">0</td>
+            <td class="DA">2</td>
+            <td class="GA">11
+
+        </tr>
+
+        <tr>
+
+            <td class="count">35</td>
+            <td class="player-name-call">Де-Милло Дмитрий</td>
+            <td class="team-call">HMN</td>
+            <td class="TP">12</td>
+            <td class="TW">6</td>
+            <td class="TD">3</td>
+            <td class="TL">3</td>
+            <td class="TA">3</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">12</td>
+            <td class="DW">6</td>
+            <td class="DD">3</td>
+            <td class="DL">3</td>
+            <td class="DA">3</td>
+            <td class="GA">27
+
+        </tr>
+
+        <tr>
+
+            <td class="count">36</td>
+            <td class="player-name-call">Лифшиц Кристина</td>
+            <td class="team-call">ВП</td>
+            <td class="TP">6</td>
+            <td class="TW">4</td>
+            <td class="TD">1</td>
+            <td class="TL">1</td>
+            <td class="TA">3</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">6</td>
+            <td class="DW">4</td>
+            <td class="DD">1</td>
+            <td class="DL">1</td>
+            <td class="DA">3</td>
+            <td class="GA">26
+
+        </tr>
+
+        <tr>
+
+            <td class="count">37</td>
+            <td class="player-name-call">Лимещенко Антон</td>
+            <td class="team-call">PP</td>
+            <td class="TP">11</td>
+            <td class="TW">6</td>
+            <td class="TD">2</td>
+            <td class="TL">3</td>
+            <td class="TA">3</td>
+            <td class="SP">1</td>
+            <td class="SW">0</td>
+            <td class="SD">1</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">10</td>
+            <td class="DW">6</td>
+            <td class="DD">1</td>
+            <td class="DL">3</td>
+            <td class="DA">3</td>
+            <td class="GA">25
+
+        </tr>
+
+        <tr>
+
+            <td class="count">38</td>
+            <td class="player-name-call">Суковатицин Арсений</td>
+            <td class="team-call">DS</td>
+            <td class="TP">5</td>
+            <td class="TW">4</td>
+            <td class="TD">0</td>
+            <td class="TL">1</td>
+            <td class="TA">3</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">5</td>
+            <td class="DW">4</td>
+            <td class="DD">0</td>
+            <td class="DL">1</td>
+            <td class="DA">3</td>
+            <td class="GA">22
+
+        </tr>
+
+        <tr>
+
+            <td class="count">39</td>
+            <td class="player-name-call">Захматов Константин</td>
+            <td class="team-call">РПК</td>
+            <td class="TP">9</td>
+            <td class="TW">3</td>
+            <td class="TD">6</td>
+            <td class="TL">0</td>
+            <td class="TA">3</td>
+            <td class="SP">2</td>
+            <td class="SW">0</td>
+            <td class="SD">2</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">7</td>
+            <td class="DW">3</td>
+            <td class="DD">4</td>
+            <td class="DL">0</td>
+            <td class="DA">3</td>
+            <td class="GA">21
+
+        </tr>
+
+        <tr>
+
+            <td class="count">40</td>
+            <td class="player-name-call">Гуров Илья</td>
+            <td class="team-call">РПК</td>
+            <td class="TP">7</td>
+            <td class="TW">3</td>
+            <td class="TD">4</td>
+            <td class="TL">0</td>
+            <td class="TA">3</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">7</td>
+            <td class="DW">3</td>
+            <td class="DD">4</td>
+            <td class="DL">0</td>
+            <td class="DA">3</td>
+            <td class="GA">20
+
+        </tr>
+
+        <tr>
+
+            <td class="count">41</td>
+            <td class="player-name-call">Фёдорова Надежда</td>
+            <td class="team-call">ВП</td>
+            <td class="TP">6</td>
+            <td class="TW">4</td>
+            <td class="TD">1</td>
+            <td class="TL">1</td>
+            <td class="TA">3</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">6</td>
+            <td class="DW">4</td>
+            <td class="DD">1</td>
+            <td class="DL">1</td>
+            <td class="DA">3</td>
+            <td class="GA">18
+
+        </tr>
+
+        <tr>
+
+            <td class="count">42</td>
+            <td class="player-name-call">Роман Полина</td>
+            <td class="team-call">FST</td>
+            <td class="TP">4</td>
+            <td class="TW">3</td>
+            <td class="TD">1</td>
+            <td class="TL">0</td>
+            <td class="TA">3</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">4</td>
+            <td class="DW">3</td>
+            <td class="DD">1</td>
+            <td class="DL">0</td>
+            <td class="DA">3</td>
+            <td class="GA">15
+
+        </tr>
+
+        <tr>
+
+            <td class="count">43</td>
+            <td class="player-name-call">Анисимова Наталья</td>
+            <td class="team-call">ВП</td>
+            <td class="TP">6</td>
+            <td class="TW">3</td>
+            <td class="TD">3</td>
+            <td class="TL">0</td>
+            <td class="TA">3</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">6</td>
+            <td class="DW">3</td>
+            <td class="DD">3</td>
+            <td class="DL">0</td>
+            <td class="DA">3</td>
+            <td class="GA">13
+
+        </tr>
+
+        <tr>
+
+            <td class="count">44</td>
+            <td class="player-name-call">Мостивенко Тимофей</td>
+            <td class="team-call">HMN</td>
+            <td class="TP">7</td>
+            <td class="TW">4</td>
+            <td class="TD">2</td>
+            <td class="TL">1</td>
+            <td class="TA">3</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">7</td>
+            <td class="DW">4</td>
+            <td class="DD">2</td>
+            <td class="DL">1</td>
+            <td class="DA">3</td>
+            <td class="GA">12
+
+        </tr>
+
+        <tr>
+
+            <td class="count">45</td>
+            <td class="player-name-call">Казанцев Дмитрий</td>
+            <td class="team-call">РПК</td>
+            <td class="TP">13</td>
+            <td class="TW">4</td>
+            <td class="TD">8</td>
+            <td class="TL">1</td>
+            <td class="TA">3</td>
+            <td class="SP">2</td>
+            <td class="SW">0</td>
+            <td class="SD">1</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">11</td>
+            <td class="DW">4</td>
+            <td class="DD">7</td>
+            <td class="DL">0</td>
+            <td class="DA">4</td>
+            <td class="GA">25
+
+        </tr>
+
+        <tr>
+
+            <td class="count">46</td>
+            <td class="player-name-call">Алексеев Роман</td>
+            <td class="team-call">ВП</td>
+            <td class="TP">10</td>
+            <td class="TW">5</td>
+            <td class="TD">2</td>
+            <td class="TL">3</td>
+            <td class="TA">2</td>
+            <td class="SP">5</td>
+            <td class="SW">2</td>
+            <td class="SD">2</td>
+            <td class="SL">1</td>
+            <td class="SA">1</td>
+            <td class="DP">5</td>
+            <td class="DW">3</td>
+            <td class="DD">0</td>
+            <td class="DL">2</td>
+            <td class="DA">1</td>
+            <td class="GA">21
+
+        </tr>
+
+        <tr>
+
+            <td class="count">47</td>
+            <td class="player-name-call">Рысов Евгений</td>
+            <td class="team-call">РПК</td>
+            <td class="TP">5</td>
+            <td class="TW">2</td>
+            <td class="TD">3</td>
+            <td class="TL">0</td>
+            <td class="TA">2</td>
+            <td class="SP">2</td>
+            <td class="SW">1</td>
+            <td class="SD">1</td>
+            <td class="SL">0</td>
+            <td class="SA">1</td>
+            <td class="DP">3</td>
+            <td class="DW">1</td>
+            <td class="DD">2</td>
+            <td class="DL">0</td>
+            <td class="DA">1</td>
+            <td class="GA">17
+
+        </tr>
+
+        <tr>
+
+            <td class="count">48</td>
+            <td class="player-name-call">Чиргин Владимир</td>
+            <td class="team-call">РПК</td>
+            <td class="TP">7</td>
+            <td class="TW">3</td>
+            <td class="TD">3</td>
+            <td class="TL">1</td>
+            <td class="TA">2</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">7</td>
+            <td class="DW">3</td>
+            <td class="DD">3</td>
+            <td class="DL">1</td>
+            <td class="DA">2</td>
+            <td class="GA">22
+
+        </tr>
+
+        <tr>
+
+            <td class="count">49</td>
+            <td class="player-name-call">Дьяков Владимир</td>
+            <td class="team-call">HMN</td>
+            <td class="TP">8</td>
+            <td class="TW">3</td>
+            <td class="TD">4</td>
+            <td class="TL">1</td>
+            <td class="TA">2</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">8</td>
+            <td class="DW">3</td>
+            <td class="DD">4</td>
+            <td class="DL">1</td>
+            <td class="DA">2</td>
+            <td class="GA">15
+
+        </tr>
+
+        <tr>
+
+            <td class="count">50</td>
+            <td class="player-name-call">Захарин Руслан</td>
+            <td class="team-call">FST</td>
+            <td class="TP">4</td>
+            <td class="TW">2</td>
+            <td class="TD">2</td>
+            <td class="TL">0</td>
+            <td class="TA">2</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">4</td>
+            <td class="DW">2</td>
+            <td class="DD">2</td>
+            <td class="DL">0</td>
+            <td class="DA">2</td>
+            <td class="GA">15
+
+        </tr>
+
+        <tr>
+
+            <td class="count">51</td>
+            <td class="player-name-call">Самойлов Максим</td>
+            <td class="team-call">LP</td>
+            <td class="TP">7</td>
+            <td class="TW">3</td>
+            <td class="TD">3</td>
+            <td class="TL">1</td>
+            <td class="TA">2</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">7</td>
+            <td class="DW">3</td>
+            <td class="DD">3</td>
+            <td class="DL">1</td>
+            <td class="DA">2</td>
+            <td class="GA">13
+
+        </tr>
+
+        <tr>
+
+            <td class="count">52</td>
+            <td class="player-name-call">Букин Евгений</td>
+            <td class="team-call">ВП</td>
+            <td class="TP">4</td>
+            <td class="TW">2</td>
+            <td class="TD">2</td>
+            <td class="TL">0</td>
+            <td class="TA">2</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">4</td>
+            <td class="DW">2</td>
+            <td class="DD">2</td>
+            <td class="DL">0</td>
+            <td class="DA">2</td>
+            <td class="GA">10
+
+        </tr>
+
+        <tr>
+
+            <td class="count">53</td>
+            <td class="player-name-call">Морозов Даниил</td>
+            <td class="team-call">RZQ</td>
+            <td class="TP">2</td>
+            <td class="TW">2</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">2</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">2</td>
+            <td class="DW">2</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">2</td>
+            <td class="GA">10
+
+        </tr>
+
+        <tr>
+
+            <td class="count">54</td>
+            <td class="player-name-call">Степанов Андрей</td>
+            <td class="team-call">GS</td>
+            <td class="TP">12</td>
+            <td class="TW">5</td>
+            <td class="TD">4</td>
+            <td class="TL">3</td>
+            <td class="TA">2</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">12</td>
+            <td class="DW">5</td>
+            <td class="DD">4</td>
+            <td class="DL">3</td>
+            <td class="DA">2</td>
+            <td class="GA">7
+
+        </tr>
+
+        <tr>
+
+            <td class="count">55</td>
+            <td class="player-name-call">Овчинников Кирилл</td>
+            <td class="team-call">PS</td>
+            <td class="TP">11</td>
+            <td class="TW">5</td>
+            <td class="TD">3</td>
+            <td class="TL">3</td>
+            <td class="TA">2</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">11</td>
+            <td class="DW">5</td>
+            <td class="DD">3</td>
+            <td class="DL">3</td>
+            <td class="DA">2</td>
+            <td class="GA">6
+
+        </tr>
+
+        <tr>
+
+            <td class="count">56</td>
+            <td class="player-name-call">Захаров Евгений</td>
+            <td class="team-call">ВП</td>
+            <td class="TP">8</td>
+            <td class="TW">4</td>
+            <td class="TD">1</td>
+            <td class="TL">3</td>
+            <td class="TA">1</td>
+            <td class="SP">1</td>
+            <td class="SW">1</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">1</td>
+            <td class="DP">7</td>
+            <td class="DW">3</td>
+            <td class="DD">1</td>
+            <td class="DL">3</td>
+            <td class="DA">0</td>
+            <td class="GA">12
+
+        </tr>
+
+        <tr>
+
+            <td class="count">57</td>
+            <td class="player-name-call">Устинов Михаил</td>
+            <td class="team-call">HMN</td>
+            <td class="TP">6</td>
+            <td class="TW">2</td>
+            <td class="TD">3</td>
+            <td class="TL">1</td>
+            <td class="TA">1</td>
+            <td class="SP">2</td>
+            <td class="SW">1</td>
+            <td class="SD">1</td>
+            <td class="SL">0</td>
+            <td class="SA">1</td>
+            <td class="DP">4</td>
+            <td class="DW">1</td>
+            <td class="DD">2</td>
+            <td class="DL">1</td>
+            <td class="DA">0</td>
+            <td class="GA">2
+
+        </tr>
+
+        <tr>
+
+            <td class="count">58</td>
+            <td class="player-name-call">Возчиков Игорь</td>
+            <td class="team-call">PUB</td>
+            <td class="TP">12</td>
+            <td class="TW">3</td>
+            <td class="TD">7</td>
+            <td class="TL">2</td>
+            <td class="TA">1</td>
+            <td class="SP">6</td>
+            <td class="SW">1</td>
+            <td class="SD">5</td>
+            <td class="SL">0</td>
+            <td class="SA">1</td>
+            <td class="DP">6</td>
+            <td class="DW">2</td>
+            <td class="DD">2</td>
+            <td class="DL">2</td>
+            <td class="DA">0</td>
+            <td class="GA">-12
+
+        </tr>
+
+        <tr>
+
+            <td class="count">59</td>
+            <td class="player-name-call">Матвеев Марк</td>
+            <td class="team-call">PP</td>
+            <td class="TP">5</td>
+            <td class="TW">2</td>
+            <td class="TD">2</td>
+            <td class="TL">1</td>
+            <td class="TA">1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">5</td>
+            <td class="DW">2</td>
+            <td class="DD">2</td>
+            <td class="DL">1</td>
+            <td class="DA">1</td>
+            <td class="GA">12
+
+        </tr>
+
+        <tr>
+
+            <td class="count">60</td>
+            <td class="player-name-call">Денисенко Денис</td>
+            <td class="team-call">DS</td>
+            <td class="TP">5</td>
+            <td class="TW">2</td>
+            <td class="TD">2</td>
+            <td class="TL">1</td>
+            <td class="TA">1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">5</td>
+            <td class="DW">2</td>
+            <td class="DD">2</td>
+            <td class="DL">1</td>
+            <td class="DA">1</td>
+            <td class="GA">12
+
+        </tr>
+
+        <tr>
+
+            <td class="count">61</td>
+            <td class="player-name-call">Губин А Павел</td>
+            <td class="team-call">РПК</td>
+            <td class="TP">10</td>
+            <td class="TW">3</td>
+            <td class="TD">5</td>
+            <td class="TL">2</td>
+            <td class="TA">1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">10</td>
+            <td class="DW">3</td>
+            <td class="DD">5</td>
+            <td class="DL">2</td>
+            <td class="DA">1</td>
+            <td class="GA">11
+
+        </tr>
+
+        <tr>
+
+            <td class="count">62</td>
+            <td class="player-name-call">Муллагалеев Тимофей</td>
+            <td class="team-call">PP</td>
+            <td class="TP">8</td>
+            <td class="TW">4</td>
+            <td class="TD">1</td>
+            <td class="TL">3</td>
+            <td class="TA">1</td>
+            <td class="SP">1</td>
+            <td class="SW">0</td>
+            <td class="SD">1</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">7</td>
+            <td class="DW">4</td>
+            <td class="DD">0</td>
+            <td class="DL">3</td>
+            <td class="DA">1</td>
+            <td class="GA">9
+
+        </tr>
+
+        <tr>
+
+            <td class="count">63</td>
+            <td class="player-name-call">Понимаш Алексей</td>
+            <td class="team-call">PS</td>
+            <td class="TP">5</td>
+            <td class="TW">2</td>
+            <td class="TD">2</td>
+            <td class="TL">1</td>
+            <td class="TA">1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">5</td>
+            <td class="DW">2</td>
+            <td class="DD">2</td>
+            <td class="DL">1</td>
+            <td class="DA">1</td>
+            <td class="GA">8
+
+        </tr>
+
+        <tr>
+
+            <td class="count">64</td>
+            <td class="player-name-call">Михайлов Роман</td>
+            <td class="team-call">RZQ</td>
+            <td class="TP">8</td>
+            <td class="TW">4</td>
+            <td class="TD">1</td>
+            <td class="TL">3</td>
+            <td class="TA">1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">8</td>
+            <td class="DW">4</td>
+            <td class="DD">1</td>
+            <td class="DL">3</td>
+            <td class="DA">1</td>
+            <td class="GA">7
+
+        </tr>
+
+        <tr>
+
+            <td class="count">65</td>
+            <td class="player-name-call">Чеберев Виктор</td>
+            <td class="team-call">RZQ</td>
+            <td class="TP">6</td>
+            <td class="TW">2</td>
+            <td class="TD">3</td>
+            <td class="TL">1</td>
+            <td class="TA">1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">6</td>
+            <td class="DW">2</td>
+            <td class="DD">3</td>
+            <td class="DL">1</td>
+            <td class="DA">1</td>
+            <td class="GA">7
+
+        </tr>
+
+        <tr>
+
+            <td class="count">66</td>
+            <td class="player-name-call">Ичков Алексей</td>
+            <td class="team-call">PP</td>
+            <td class="TP">3</td>
+            <td class="TW">2</td>
+            <td class="TD">0</td>
+            <td class="TL">1</td>
+            <td class="TA">1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">3</td>
+            <td class="DW">2</td>
+            <td class="DD">0</td>
+            <td class="DL">1</td>
+            <td class="DA">1</td>
+            <td class="GA">5
+
+        </tr>
+
+        <tr>
+
+            <td class="count">67</td>
+            <td class="player-name-call">Леонтьев Игорь</td>
+            <td class="team-call">PP</td>
+            <td class="TP">2</td>
+            <td class="TW">1</td>
+            <td class="TD">1</td>
+            <td class="TL">0</td>
+            <td class="TA">1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">2</td>
+            <td class="DW">1</td>
+            <td class="DD">1</td>
+            <td class="DL">0</td>
+            <td class="DA">1</td>
+            <td class="GA">5
+
+        </tr>
+
+        <tr>
+
+            <td class="count">68</td>
+            <td class="player-name-call">Соболев Иван</td>
+            <td class="team-call">PS</td>
+            <td class="TP">1</td>
+            <td class="TW">1</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">1</td>
+            <td class="DW">1</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">1</td>
+            <td class="GA">5
+
+        </tr>
+
+        <tr>
+
+            <td class="count">69</td>
+            <td class="player-name-call">Суворов Роман</td>
+            <td class="team-call">АКМ</td>
+            <td class="TP">2</td>
+            <td class="TW">1</td>
+            <td class="TD">1</td>
+            <td class="TL">0</td>
+            <td class="TA">1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">2</td>
+            <td class="DW">1</td>
+            <td class="DD">1</td>
+            <td class="DL">0</td>
+            <td class="DA">1</td>
+            <td class="GA">4
+
+        </tr>
+
+        <tr>
+
+            <td class="count">70</td>
+            <td class="player-name-call">Романова Валерия</td>
+            <td class="team-call">АКМ</td>
+            <td class="TP">12</td>
+            <td class="TW">5</td>
+            <td class="TD">3</td>
+            <td class="TL">4</td>
+            <td class="TA">1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">12</td>
+            <td class="DW">5</td>
+            <td class="DD">3</td>
+            <td class="DL">4</td>
+            <td class="DA">1</td>
+            <td class="GA">-5
+
+        </tr>
+
+        <tr>
+
+            <td class="count">71</td>
+            <td class="player-name-call">Сергеева Елена</td>
+            <td class="team-call">АКМ</td>
+            <td class="TP">15</td>
+            <td class="TW">5</td>
+            <td class="TD">6</td>
+            <td class="TL">4</td>
+            <td class="TA">1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">15</td>
+            <td class="DW">5</td>
+            <td class="DD">6</td>
+            <td class="DL">4</td>
+            <td class="DA">1</td>
+            <td class="GA">-6
+
+        </tr>
+
+        <tr>
+
+            <td class="count">72</td>
+            <td class="player-name-call">Лаврентьева Мария</td>
+            <td class="team-call">ВП</td>
+            <td class="TP">10</td>
+            <td class="TW">3</td>
+            <td class="TD">5</td>
+            <td class="TL">2</td>
+            <td class="TA">1</td>
+            <td class="SP">1</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">9</td>
+            <td class="DW">3</td>
+            <td class="DD">5</td>
+            <td class="DL">1</td>
+            <td class="DA">2</td>
+            <td class="GA">4
+
+        </tr>
+
+        <tr>
+
+            <td class="count">73</td>
+            <td class="player-name-call">Костромин Александр</td>
+            <td class="team-call">ВП</td>
+            <td class="TP">5</td>
+            <td class="TW">2</td>
+            <td class="TD">1</td>
+            <td class="TL">2</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">5</td>
+            <td class="DW">2</td>
+            <td class="DD">1</td>
+            <td class="DL">2</td>
+            <td class="DA">0</td>
+            <td class="GA">5
+
+        </tr>
+
+        <tr>
+
+            <td class="count">74</td>
+            <td class="player-name-call">Бобин Дмитрий</td>
+            <td class="team-call">PP</td>
+            <td class="TP">7</td>
+            <td class="TW">2</td>
+            <td class="TD">3</td>
+            <td class="TL">2</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">7</td>
+            <td class="DW">2</td>
+            <td class="DD">3</td>
+            <td class="DL">2</td>
+            <td class="DA">0</td>
+            <td class="GA">4
+
+        </tr>
+
+        <tr>
+
+            <td class="count">75</td>
+            <td class="player-name-call">Ермачкова Виктория</td>
+            <td class="team-call">БШ</td>
+            <td class="TP">17</td>
+            <td class="TW">6</td>
+            <td class="TD">5</td>
+            <td class="TL">6</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">17</td>
+            <td class="DW">6</td>
+            <td class="DD">5</td>
+            <td class="DL">6</td>
+            <td class="DA">0</td>
+            <td class="GA">1
+
+        </tr>
+
+        <tr>
+
+            <td class="count">76</td>
+            <td class="player-name-call">Грейв Галина</td>
+            <td class="team-call">PP</td>
+            <td class="TP">1</td>
+            <td class="TW">0</td>
+            <td class="TD">1</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">1</td>
+            <td class="DW">0</td>
+            <td class="DD">1</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">77</td>
+            <td class="player-name-call">Кастсевич Константин</td>
+            <td class="team-call">АКМ</td>
+            <td class="TP">1</td>
+            <td class="TW">0</td>
+            <td class="TD">1</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">1</td>
+            <td class="DW">0</td>
+            <td class="DD">1</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">78</td>
+            <td class="player-name-call">Бубин Павел</td>
+            <td class="team-call">PUB</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">79</td>
+            <td class="player-name-call">Селедцов Даниил</td>
+            <td class="team-call">PP</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">80</td>
+            <td class="player-name-call">Иванушкин Максим</td>
+            <td class="team-call">PP</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">81</td>
+            <td class="player-name-call">Петрус Анна</td>
+            <td class="team-call">PP</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">82</td>
+            <td class="player-name-call">Порватов Павел</td>
+            <td class="team-call">KS</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">83</td>
+            <td class="player-name-call">Евланов Леонид</td>
+            <td class="team-call">KS</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">84</td>
+            <td class="player-name-call">Янгазов Рашид</td>
+            <td class="team-call">PS</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">85</td>
+            <td class="player-name-call">Мирошниченко Никита</td>
+            <td class="team-call">PS</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">86</td>
+            <td class="player-name-call">Овчинников Даниил</td>
+            <td class="team-call">DS</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">87</td>
+            <td class="player-name-call">Машковский Артём</td>
+            <td class="team-call">АКМ</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">88</td>
+            <td class="player-name-call">Трушников Александр</td>
+            <td class="team-call">LP</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">89</td>
+            <td class="player-name-call">Щегряева Ольга</td>
+            <td class="team-call">OT</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">90</td>
+            <td class="player-name-call">Лепиков Станислав</td>
+            <td class="team-call">OT</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">91</td>
+            <td class="player-name-call">Каримов Анзор</td>
+            <td class="team-call">LP</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">92</td>
+            <td class="player-name-call">Курсаев Ислам</td>
+            <td class="team-call">РПК</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">93</td>
+            <td class="player-name-call">Асеев Алексей</td>
+            <td class="team-call">АКМ</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">94</td>
+            <td class="player-name-call">Остроумов Никита</td>
+            <td class="team-call">АКМ</td>
+            <td class="TP">0</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">0</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">0
+
+        </tr>
+
+        <tr>
+
+            <td class="count">95</td>
+            <td class="player-name-call">Ковалёв Максим</td>
+            <td class="team-call">PUB</td>
+            <td class="TP">1</td>
+            <td class="TW">0</td>
+            <td class="TD">1</td>
+            <td class="TL">0</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">1</td>
+            <td class="DW">0</td>
+            <td class="DD">1</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">-2
+
+        </tr>
+
+        <tr>
+
+            <td class="count">96</td>
+            <td class="player-name-call">Разживин Захар</td>
+            <td class="team-call">DS</td>
+            <td class="TP">7</td>
+            <td class="TW">2</td>
+            <td class="TD">3</td>
+            <td class="TL">2</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">7</td>
+            <td class="DW">2</td>
+            <td class="DD">3</td>
+            <td class="DL">2</td>
+            <td class="DA">0</td>
+            <td class="GA">-3
+
+        </tr>
+
+        <tr>
+
+            <td class="count">97</td>
+            <td class="player-name-call">Седик Мана</td>
+            <td class="team-call">HMN</td>
+            <td class="TP">4</td>
+            <td class="TW">2</td>
+            <td class="TD">0</td>
+            <td class="TL">2</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">4</td>
+            <td class="DW">2</td>
+            <td class="DD">0</td>
+            <td class="DL">2</td>
+            <td class="DA">0</td>
+            <td class="GA">-3
+
+        </tr>
+
+        <tr>
+
+            <td class="count">98</td>
+            <td class="player-name-call">Трясцын Кирилл</td>
+            <td class="team-call">PUB</td>
+            <td class="TP">7</td>
+            <td class="TW">2</td>
+            <td class="TD">3</td>
+            <td class="TL">2</td>
+            <td class="TA">0</td>
+            <td class="SP">2</td>
+            <td class="SW">1</td>
+            <td class="SD">0</td>
+            <td class="SL">1</td>
+            <td class="SA">0</td>
+            <td class="DP">5</td>
+            <td class="DW">1</td>
+            <td class="DD">3</td>
+            <td class="DL">1</td>
+            <td class="DA">0</td>
+            <td class="GA">-5
+
+        </tr>
+
+        <tr>
+
+            <td class="count">99</td>
+            <td class="player-name-call">Андреева Елизавета</td>
+            <td class="team-call">PUB</td>
+            <td class="TP">9</td>
+            <td class="TW">3</td>
+            <td class="TD">3</td>
+            <td class="TL">3</td>
+            <td class="TA">0</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">9</td>
+            <td class="DW">3</td>
+            <td class="DD">3</td>
+            <td class="DL">3</td>
+            <td class="DA">0</td>
+            <td class="GA">-9
+
+        </tr>
+
+        <tr>
+
+            <td class="count">100</td>
+            <td class="player-name-call">Ломтадзе Михаил</td>
+            <td class="team-call">GS</td>
+            <td class="TP">13</td>
+            <td class="TW">4</td>
+            <td class="TD">5</td>
+            <td class="TL">4</td>
+            <td class="TA">0</td>
+            <td class="SP">3</td>
+            <td class="SW">1</td>
+            <td class="SD">1</td>
+            <td class="SL">1</td>
+            <td class="SA">0</td>
+            <td class="DP">10</td>
+            <td class="DW">3</td>
+            <td class="DD">4</td>
+            <td class="DL">3</td>
+            <td class="DA">0</td>
+            <td class="GA">-10
+
+        </tr>
+
+        <tr>
+
+            <td class="count">101</td>
+            <td class="player-name-call">Думп Юрий</td>
+            <td class="team-call">РПК</td>
+            <td class="TP">10</td>
+            <td class="TW">2</td>
+            <td class="TD">6</td>
+            <td class="TL">2</td>
+            <td class="TA">0</td>
+            <td class="SP">3</td>
+            <td class="SW">0</td>
+            <td class="SD">2</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">7</td>
+            <td class="DW">2</td>
+            <td class="DD">4</td>
+            <td class="DL">1</td>
+            <td class="DA">1</td>
+            <td class="GA">11
+
+        </tr>
+
+        <tr>
+
+            <td class="count">102</td>
+            <td class="player-name-call">Сальманов Арсен</td>
+            <td class="team-call">OT</td>
+            <td class="TP">14</td>
+            <td class="TW">3</td>
+            <td class="TD">8</td>
+            <td class="TL">3</td>
+            <td class="TA">0</td>
+            <td class="SP">6</td>
+            <td class="SW">1</td>
+            <td class="SD">3</td>
+            <td class="SL">2</td>
+            <td class="SA">-1</td>
+            <td class="DP">8</td>
+            <td class="DW">2</td>
+            <td class="DD">5</td>
+            <td class="DL">1</td>
+            <td class="DA">1</td>
+            <td class="GA">-6
+
+        </tr>
+
+        <tr>
+
+            <td class="count">103</td>
+            <td class="player-name-call">Сайфутдинов Дамир</td>
+            <td class="team-call">LP</td>
+            <td class="TP">9</td>
+            <td class="TW">3</td>
+            <td class="TD">3</td>
+            <td class="TL">3</td>
+            <td class="TA">0</td>
+            <td class="SP">2</td>
+            <td class="SW">0</td>
+            <td class="SD">1</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">7</td>
+            <td class="DW">3</td>
+            <td class="DD">2</td>
+            <td class="DL">2</td>
+            <td class="DA">1</td>
+            <td class="GA">-8
+
+        </tr>
+
+        <tr>
+
+            <td class="count">104</td>
+            <td class="player-name-call">Быков Александр</td>
+            <td class="team-call">RZQ</td>
+            <td class="TP">8</td>
+            <td class="TW">2</td>
+            <td class="TD">4</td>
+            <td class="TL">2</td>
+            <td class="TA">0</td>
+            <td class="SP">1</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">7</td>
+            <td class="DW">2</td>
+            <td class="DD">4</td>
+            <td class="DL">1</td>
+            <td class="DA">1</td>
+            <td class="GA">-13
+
+        </tr>
+
+        <tr>
+
+            <td class="count">105</td>
+            <td class="player-name-call">Юхансен Екатерина</td>
+            <td class="team-call">ВП</td>
+            <td class="TP">5</td>
+            <td class="TW">1</td>
+            <td class="TD">2</td>
+            <td class="TL">2</td>
+            <td class="TA">-1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">5</td>
+            <td class="DW">1</td>
+            <td class="DD">2</td>
+            <td class="DL">2</td>
+            <td class="DA">-1</td>
+            <td class="GA">3
+
+        </tr>
+
+        <tr>
+
+            <td class="count">106</td>
+            <td class="player-name-call">Поздняков Роман</td>
+            <td class="team-call">GS</td>
+            <td class="TP">13</td>
+            <td class="TW">3</td>
+            <td class="TD">6</td>
+            <td class="TL">4</td>
+            <td class="TA">-1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">13</td>
+            <td class="DW">3</td>
+            <td class="DD">6</td>
+            <td class="DL">4</td>
+            <td class="DA">-1</td>
+            <td class="GA">-3
+
+        </tr>
+
+        <tr>
+
+            <td class="count">107</td>
+            <td class="player-name-call">Миненко Василий</td>
+            <td class="team-call">SV</td>
+            <td class="TP">9</td>
+            <td class="TW">3</td>
+            <td class="TD">2</td>
+            <td class="TL">4</td>
+            <td class="TA">-1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">9</td>
+            <td class="DW">3</td>
+            <td class="DD">2</td>
+            <td class="DL">4</td>
+            <td class="DA">-1</td>
+            <td class="GA">-5
+
+        </tr>
+
+        <tr>
+
+            <td class="count">108</td>
+            <td class="player-name-call">Маркова Елена</td>
+            <td class="team-call">АКМ</td>
+            <td class="TP">3</td>
+            <td class="TW">1</td>
+            <td class="TD">0</td>
+            <td class="TL">2</td>
+            <td class="TA">-1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">3</td>
+            <td class="DW">1</td>
+            <td class="DD">0</td>
+            <td class="DL">2</td>
+            <td class="DA">-1</td>
+            <td class="GA">-6
+
+        </tr>
+
+        <tr>
+
+            <td class="count">109</td>
+            <td class="player-name-call">Соколов Юрий</td>
+            <td class="team-call">PUB</td>
+            <td class="TP">1</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">1</td>
+            <td class="TA">-1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">1</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">1</td>
+            <td class="DA">-1</td>
+            <td class="GA">-7
+
+        </tr>
+
+        <tr>
+
+            <td class="count">110</td>
+            <td class="player-name-call">Диканская Валентина</td>
+            <td class="team-call">GS</td>
+            <td class="TP">1</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">1</td>
+            <td class="TA">-1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">1</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">1</td>
+            <td class="DA">-1</td>
+            <td class="GA">-8
+
+        </tr>
+
+        <tr>
+
+            <td class="count">111</td>
+            <td class="player-name-call">Арсеньев Виталий</td>
+            <td class="team-call">PS</td>
+            <td class="TP">14</td>
+            <td class="TW">4</td>
+            <td class="TD">5</td>
+            <td class="TL">5</td>
+            <td class="TA">-1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">14</td>
+            <td class="DW">4</td>
+            <td class="DD">5</td>
+            <td class="DL">5</td>
+            <td class="DA">-1</td>
+            <td class="GA">-9
+
+        </tr>
+
+        <tr>
+
+            <td class="count">112</td>
+            <td class="player-name-call">Кучмий Александра</td>
+            <td class="team-call">HMN</td>
+            <td class="TP">5</td>
+            <td class="TW">0</td>
+            <td class="TD">4</td>
+            <td class="TL">1</td>
+            <td class="TA">-1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">5</td>
+            <td class="DW">0</td>
+            <td class="DD">4</td>
+            <td class="DL">1</td>
+            <td class="DA">-1</td>
+            <td class="GA">-9
+
+        </tr>
+
+        <tr>
+
+            <td class="count">113</td>
+            <td class="player-name-call">Фёдоров Леонид</td>
+            <td class="team-call">PUB</td>
+            <td class="TP">1</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">1</td>
+            <td class="TA">-1</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">1</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">1</td>
+            <td class="DA">-1</td>
+            <td class="GA">-9
+
+        </tr>
+
+        <tr>
+
+            <td class="count">114</td>
+            <td class="player-name-call">Шерстобитов Дмитрий</td>
+            <td class="team-call">OT</td>
+            <td class="TP">14</td>
+            <td class="TW">3</td>
+            <td class="TD">7</td>
+            <td class="TL">4</td>
+            <td class="TA">-1</td>
+            <td class="SP">2</td>
+            <td class="SW">0</td>
+            <td class="SD">2</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">12</td>
+            <td class="DW">3</td>
+            <td class="DD">5</td>
+            <td class="DL">4</td>
+            <td class="DA">-1</td>
+            <td class="GA">-14
+
+        </tr>
+
+        <tr>
+
+            <td class="count">115</td>
+            <td class="player-name-call">Лукьянов Евгений</td>
+            <td class="team-call">БШ</td>
+            <td class="TP">2</td>
+            <td class="TW">0</td>
+            <td class="TD">1</td>
+            <td class="TL">1</td>
+            <td class="TA">-1</td>
+            <td class="SP">1</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">1</td>
+            <td class="DW">0</td>
+            <td class="DD">1</td>
+            <td class="DL">0</td>
+            <td class="DA">0</td>
+            <td class="GA">-7
+
+        </tr>
+
+        <tr>
+
+            <td class="count">116</td>
+            <td class="player-name-call">Дрозд Никита</td>
+            <td class="team-call">DS</td>
+            <td class="TP">8</td>
+            <td class="TW">2</td>
+            <td class="TD">3</td>
+            <td class="TL">3</td>
+            <td class="TA">-1</td>
+            <td class="SP">1</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">7</td>
+            <td class="DW">2</td>
+            <td class="DD">3</td>
+            <td class="DL">2</td>
+            <td class="DA">0</td>
+            <td class="GA">-9
+
+        </tr>
+
+        <tr>
+
+            <td class="count">117</td>
+            <td class="player-name-call">Дмитренок Александра</td>
+            <td class="team-call">БШ</td>
+            <td class="TP">17</td>
+            <td class="TW">4</td>
+            <td class="TD">7</td>
+            <td class="TL">6</td>
+            <td class="TA">-2</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">17</td>
+            <td class="DW">4</td>
+            <td class="DD">7</td>
+            <td class="DL">6</td>
+            <td class="DA">-2</td>
+            <td class="GA">-8
+
+        </tr>
+
+        <tr>
+
+            <td class="count">118</td>
+            <td class="player-name-call">Головко Игорь</td>
+            <td class="team-call">RND</td>
+            <td class="TP">4</td>
+            <td class="TW">0</td>
+            <td class="TD">2</td>
+            <td class="TL">2</td>
+            <td class="TA">-2</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">4</td>
+            <td class="DW">0</td>
+            <td class="DD">2</td>
+            <td class="DL">2</td>
+            <td class="DA">-2</td>
+            <td class="GA">-9
+
+        </tr>
+
+        <tr>
+
+            <td class="count">119</td>
+            <td class="player-name-call">Вепхвадзе Реваз</td>
+            <td class="team-call">GS</td>
+            <td class="TP">10</td>
+            <td class="TW">2</td>
+            <td class="TD">4</td>
+            <td class="TL">4</td>
+            <td class="TA">-2</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">10</td>
+            <td class="DW">2</td>
+            <td class="DD">4</td>
+            <td class="DL">4</td>
+            <td class="DA">-2</td>
+            <td class="GA">-11
+
+        </tr>
+
+        <tr>
+
+            <td class="count">120</td>
+            <td class="player-name-call">Сизов Пётр</td>
+            <td class="team-call">KS</td>
+            <td class="TP">9</td>
+            <td class="TW">2</td>
+            <td class="TD">3</td>
+            <td class="TL">4</td>
+            <td class="TA">-2</td>
+            <td class="SP">5</td>
+            <td class="SW">2</td>
+            <td class="SD">1</td>
+            <td class="SL">2</td>
+            <td class="SA">0</td>
+            <td class="DP">4</td>
+            <td class="DW">0</td>
+            <td class="DD">2</td>
+            <td class="DL">2</td>
+            <td class="DA">-2</td>
+            <td class="GA">-17
+
+        </tr>
+
+        <tr>
+
+            <td class="count">121</td>
+            <td class="player-name-call">Юденко Александр</td>
+            <td class="team-call">GS</td>
+            <td class="TP">10</td>
+            <td class="TW">2</td>
+            <td class="TD">4</td>
+            <td class="TL">4</td>
+            <td class="TA">-2</td>
+            <td class="SP">6</td>
+            <td class="SW">1</td>
+            <td class="SD">3</td>
+            <td class="SL">2</td>
+            <td class="SA">-1</td>
+            <td class="DP">4</td>
+            <td class="DW">1</td>
+            <td class="DD">1</td>
+            <td class="DL">2</td>
+            <td class="DA">-1</td>
+            <td class="GA">-1
+
+        </tr>
+
+        <tr>
+
+            <td class="count">122</td>
+            <td class="player-name-call">Смирнов Александр</td>
+            <td class="team-call">GS</td>
+            <td class="TP">3</td>
+            <td class="TW">0</td>
+            <td class="TD">1</td>
+            <td class="TL">2</td>
+            <td class="TA">-2</td>
+            <td class="SP">1</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">2</td>
+            <td class="DW">0</td>
+            <td class="DD">1</td>
+            <td class="DL">1</td>
+            <td class="DA">-1</td>
+            <td class="GA">-13
+
+        </tr>
+
+        <tr>
+
+            <td class="count">123</td>
+            <td class="player-name-call">Епихин Алексей</td>
+            <td class="team-call">HMN</td>
+            <td class="TP">7</td>
+            <td class="TW">2</td>
+            <td class="TD">0</td>
+            <td class="TL">5</td>
+            <td class="TA">-3</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">7</td>
+            <td class="DW">2</td>
+            <td class="DD">0</td>
+            <td class="DL">5</td>
+            <td class="DA">-3</td>
+            <td class="GA">-19
+
+        </tr>
+
+        <tr>
+
+            <td class="count">124</td>
+            <td class="player-name-call">Евстигнеев Борис</td>
+            <td class="team-call">PUB</td>
+            <td class="TP">3</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">3</td>
+            <td class="TA">-3</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">3</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">3</td>
+            <td class="DA">-3</td>
+            <td class="GA">-19
+
+        </tr>
+
+        <tr>
+
+            <td class="count">125</td>
+            <td class="player-name-call">Клочков Дмитрий</td>
+            <td class="team-call">PS</td>
+            <td class="TP">7</td>
+            <td class="TW">1</td>
+            <td class="TD">2</td>
+            <td class="TL">4</td>
+            <td class="TA">-3</td>
+            <td class="SP">1</td>
+            <td class="SW">0</td>
+            <td class="SD">1</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">6</td>
+            <td class="DW">1</td>
+            <td class="DD">1</td>
+            <td class="DL">4</td>
+            <td class="DA">-3</td>
+            <td class="GA">-20
+
+        </tr>
+
+        <tr>
+
+            <td class="count">126</td>
+            <td class="player-name-call">Левин Андрей</td>
+            <td class="team-call">PUB</td>
+            <td class="TP">4</td>
+            <td class="TW">0</td>
+            <td class="TD">1</td>
+            <td class="TL">3</td>
+            <td class="TA">-3</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">4</td>
+            <td class="DW">0</td>
+            <td class="DD">1</td>
+            <td class="DL">3</td>
+            <td class="DA">-3</td>
+            <td class="GA">-23
+
+        </tr>
+
+        <tr>
+
+            <td class="count">127</td>
+            <td class="player-name-call">Коряк Анастасия</td>
+            <td class="team-call">PS</td>
+            <td class="TP">9</td>
+            <td class="TW">1</td>
+            <td class="TD">4</td>
+            <td class="TL">4</td>
+            <td class="TA">-3</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">9</td>
+            <td class="DW">1</td>
+            <td class="DD">4</td>
+            <td class="DL">4</td>
+            <td class="DA">-3</td>
+            <td class="GA">-28
+
+        </tr>
+
+        <tr>
+
+            <td class="count">128</td>
+            <td class="player-name-call">Снежко Игорь</td>
+            <td class="team-call">KPI</td>
+            <td class="TP">10</td>
+            <td class="TW">1</td>
+            <td class="TD">5</td>
+            <td class="TL">4</td>
+            <td class="TA">-3</td>
+            <td class="SP">5</td>
+            <td class="SW">1</td>
+            <td class="SD">2</td>
+            <td class="SL">2</td>
+            <td class="SA">-1</td>
+            <td class="DP">5</td>
+            <td class="DW">0</td>
+            <td class="DD">3</td>
+            <td class="DL">2</td>
+            <td class="DA">-2</td>
+            <td class="GA">-27
+
+        </tr>
+
+        <tr>
+
+            <td class="count">129</td>
+            <td class="player-name-call">Кочубей Антон</td>
+            <td class="team-call">PS</td>
+            <td class="TP">9</td>
+            <td class="TW">2</td>
+            <td class="TD">2</td>
+            <td class="TL">5</td>
+            <td class="TA">-3</td>
+            <td class="SP">4</td>
+            <td class="SW">0</td>
+            <td class="SD">2</td>
+            <td class="SL">2</td>
+            <td class="SA">-2</td>
+            <td class="DP">5</td>
+            <td class="DW">2</td>
+            <td class="DD">0</td>
+            <td class="DL">3</td>
+            <td class="DA">-1</td>
+            <td class="GA">-14
+
+        </tr>
+
+        <tr>
+
+            <td class="count">130</td>
+            <td class="player-name-call">Тимофеев Павел</td>
+            <td class="team-call">OT</td>
+            <td class="TP">14</td>
+            <td class="TW">3</td>
+            <td class="TD">5</td>
+            <td class="TL">6</td>
+            <td class="TA">-3</td>
+            <td class="SP">3</td>
+            <td class="SW">0</td>
+            <td class="SD">1</td>
+            <td class="SL">2</td>
+            <td class="SA">-2</td>
+            <td class="DP">11</td>
+            <td class="DW">3</td>
+            <td class="DD">4</td>
+            <td class="DL">4</td>
+            <td class="DA">-1</td>
+            <td class="GA">-18
+
+        </tr>
+
+        <tr>
+
+            <td class="count">131</td>
+            <td class="player-name-call">Губин Павел</td>
+            <td class="team-call">LP</td>
+            <td class="TP">11</td>
+            <td class="TW">2</td>
+            <td class="TD">4</td>
+            <td class="TL">5</td>
+            <td class="TA">-3</td>
+            <td class="SP">6</td>
+            <td class="SW">0</td>
+            <td class="SD">2</td>
+            <td class="SL">4</td>
+            <td class="SA">-4</td>
+            <td class="DP">5</td>
+            <td class="DW">2</td>
+            <td class="DD">2</td>
+            <td class="DL">1</td>
+            <td class="DA">1</td>
+            <td class="GA">-16
+
+        </tr>
+
+        <tr>
+
+            <td class="count">132</td>
+            <td class="player-name-call">Клецкий Станислав</td>
+            <td class="team-call">SV</td>
+            <td class="TP">4</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">4</td>
+            <td class="TA">-4</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">4</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">4</td>
+            <td class="DA">-4</td>
+            <td class="GA">-23
+
+        </tr>
+
+        <tr>
+
+            <td class="count">133</td>
+            <td class="player-name-call">Ковалёв Алексей</td>
+            <td class="team-call">KS</td>
+            <td class="TP">4</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">4</td>
+            <td class="TA">-4</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">4</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">4</td>
+            <td class="DA">-4</td>
+            <td class="GA">-35
+
+        </tr>
+
+        <tr>
+
+            <td class="count">134</td>
+            <td class="player-name-call">Хамидулин Владимир</td>
+            <td class="team-call">PUB</td>
+            <td class="TP">10</td>
+            <td class="TW">0</td>
+            <td class="TD">6</td>
+            <td class="TL">4</td>
+            <td class="TA">-4</td>
+            <td class="SP">3</td>
+            <td class="SW">0</td>
+            <td class="SD">2</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">7</td>
+            <td class="DW">0</td>
+            <td class="DD">4</td>
+            <td class="DL">3</td>
+            <td class="DA">-3</td>
+            <td class="GA">-16
+
+        </tr>
+
+        <tr>
+
+            <td class="count">135</td>
+            <td class="player-name-call">Федотов Владимир</td>
+            <td class="team-call">БШ</td>
+            <td class="TP">16</td>
+            <td class="TW">4</td>
+            <td class="TD">4</td>
+            <td class="TL">8</td>
+            <td class="TA">-4</td>
+            <td class="SP">1</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">15</td>
+            <td class="DW">4</td>
+            <td class="DD">4</td>
+            <td class="DL">7</td>
+            <td class="DA">-3</td>
+            <td class="GA">-25
+
+        </tr>
+
+        <tr>
+
+            <td class="count">136</td>
+            <td class="player-name-call">Чемоданов Илья</td>
+            <td class="team-call">OT</td>
+            <td class="TP">14</td>
+            <td class="TW">2</td>
+            <td class="TD">6</td>
+            <td class="TL">6</td>
+            <td class="TA">-4</td>
+            <td class="SP">1</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">13</td>
+            <td class="DW">2</td>
+            <td class="DD">6</td>
+            <td class="DL">5</td>
+            <td class="DA">-3</td>
+            <td class="GA">-26
+
+        </tr>
+
+        <tr>
+
+            <td class="count">137</td>
+            <td class="player-name-call">Волохин Фёдор</td>
+            <td class="team-call">RND</td>
+            <td class="TP">4</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">4</td>
+            <td class="TA">-4</td>
+            <td class="SP">1</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">3</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">3</td>
+            <td class="DA">-3</td>
+            <td class="GA">-32
+
+        </tr>
+
+        <tr>
+
+            <td class="count">138</td>
+            <td class="player-name-call">Степанов Павел</td>
+            <td class="team-call">KPI</td>
+            <td class="TP">8</td>
+            <td class="TW">0</td>
+            <td class="TD">4</td>
+            <td class="TL">4</td>
+            <td class="TA">-4</td>
+            <td class="SP">1</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">7</td>
+            <td class="DW">0</td>
+            <td class="DD">4</td>
+            <td class="DL">3</td>
+            <td class="DA">-3</td>
+            <td class="GA">-35
+
+        </tr>
+
+        <tr>
+
+            <td class="count">139</td>
+            <td class="player-name-call">Супрун Дмитрий</td>
+            <td class="team-call">GS</td>
+            <td class="TP">9</td>
+            <td class="TW">1</td>
+            <td class="TD">3</td>
+            <td class="TL">5</td>
+            <td class="TA">-4</td>
+            <td class="SP">2</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">2</td>
+            <td class="SA">-2</td>
+            <td class="DP">7</td>
+            <td class="DW">1</td>
+            <td class="DD">3</td>
+            <td class="DL">3</td>
+            <td class="DA">-2</td>
+            <td class="GA">-19
+
+        </tr>
+
+        <tr>
+
+            <td class="count">140</td>
+            <td class="player-name-call">Тихонов Кирилл</td>
+            <td class="team-call">PUB</td>
+            <td class="TP">13</td>
+            <td class="TW">1</td>
+            <td class="TD">7</td>
+            <td class="TL">5</td>
+            <td class="TA">-4</td>
+            <td class="SP">3</td>
+            <td class="SW">0</td>
+            <td class="SD">1</td>
+            <td class="SL">2</td>
+            <td class="SA">-2</td>
+            <td class="DP">10</td>
+            <td class="DW">1</td>
+            <td class="DD">6</td>
+            <td class="DL">3</td>
+            <td class="DA">-2</td>
+            <td class="GA">-22
+
+        </tr>
+
+        <tr>
+
+            <td class="count">141</td>
+            <td class="player-name-call">Малышев Андрей</td>
+            <td class="team-call">PS</td>
+            <td class="TP">9</td>
+            <td class="TW">1</td>
+            <td class="TD">3</td>
+            <td class="TL">5</td>
+            <td class="TA">-4</td>
+            <td class="SP">5</td>
+            <td class="SW">0</td>
+            <td class="SD">3</td>
+            <td class="SL">2</td>
+            <td class="SA">-2</td>
+            <td class="DP">4</td>
+            <td class="DW">1</td>
+            <td class="DD">0</td>
+            <td class="DL">3</td>
+            <td class="DA">-2</td>
+            <td class="GA">-24
+
+        </tr>
+
+        <tr>
+
+            <td class="count">142</td>
+            <td class="player-name-call">Вавулин Дмитрий</td>
+            <td class="team-call">SV</td>
+            <td class="TP">8</td>
+            <td class="TW">0</td>
+            <td class="TD">4</td>
+            <td class="TL">4</td>
+            <td class="TA">-4</td>
+            <td class="SP">3</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">3</td>
+            <td class="SA">-3</td>
+            <td class="DP">5</td>
+            <td class="DW">0</td>
+            <td class="DD">4</td>
+            <td class="DL">1</td>
+            <td class="DA">-1</td>
+            <td class="GA">-26
+
+        </tr>
+
+        <tr>
+
+            <td class="count">143</td>
+            <td class="player-name-call">Можейко Юрий</td>
+            <td class="team-call">PUB</td>
+            <td class="TP">9</td>
+            <td class="TW">1</td>
+            <td class="TD">2</td>
+            <td class="TL">6</td>
+            <td class="TA">-5</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">9</td>
+            <td class="DW">1</td>
+            <td class="DD">2</td>
+            <td class="DL">6</td>
+            <td class="DA">-5</td>
+            <td class="GA">-27
+
+        </tr>
+
+        <tr>
+
+            <td class="count">144</td>
+            <td class="player-name-call">Вишневский Егор</td>
+            <td class="team-call">KPI</td>
+            <td class="TP">6</td>
+            <td class="TW">0</td>
+            <td class="TD">1</td>
+            <td class="TL">5</td>
+            <td class="TA">-5</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">6</td>
+            <td class="DW">0</td>
+            <td class="DD">1</td>
+            <td class="DL">5</td>
+            <td class="DA">-5</td>
+            <td class="GA">-29
+
+        </tr>
+
+        <tr>
+
+            <td class="count">145</td>
+            <td class="player-name-call">Кашенок Анна</td>
+            <td class="team-call">KS</td>
+            <td class="TP">8</td>
+            <td class="TW">0</td>
+            <td class="TD">3</td>
+            <td class="TL">5</td>
+            <td class="TA">-5</td>
+            <td class="SP">3</td>
+            <td class="SW">0</td>
+            <td class="SD">2</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">5</td>
+            <td class="DW">0</td>
+            <td class="DD">1</td>
+            <td class="DL">4</td>
+            <td class="DA">-4</td>
+            <td class="GA">-28
+
+        </tr>
+
+        <tr>
+
+            <td class="count">146</td>
+            <td class="player-name-call">Шестаков Роман</td>
+            <td class="team-call">SV</td>
+            <td class="TP">8</td>
+            <td class="TW">0</td>
+            <td class="TD">3</td>
+            <td class="TL">5</td>
+            <td class="TA">-5</td>
+            <td class="SP">4</td>
+            <td class="SW">0</td>
+            <td class="SD">1</td>
+            <td class="SL">3</td>
+            <td class="SA">-3</td>
+            <td class="DP">4</td>
+            <td class="DW">0</td>
+            <td class="DD">2</td>
+            <td class="DL">2</td>
+            <td class="DA">-2</td>
+            <td class="GA">-30
+
+        </tr>
+
+        <tr>
+
+            <td class="count">147</td>
+            <td class="player-name-call">Павлов Леонид</td>
+            <td class="team-call">SV</td>
+            <td class="TP">10</td>
+            <td class="TW">1</td>
+            <td class="TD">2</td>
+            <td class="TL">7</td>
+            <td class="TA">-6</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">10</td>
+            <td class="DW">1</td>
+            <td class="DD">2</td>
+            <td class="DL">7</td>
+            <td class="DA">-6</td>
+            <td class="GA">-31
+
+        </tr>
+
+        <tr>
+
+            <td class="count">148</td>
+            <td class="player-name-call">Орлова Ксения</td>
+            <td class="team-call">RND</td>
+            <td class="TP">10</td>
+            <td class="TW">0</td>
+            <td class="TD">4</td>
+            <td class="TL">6</td>
+            <td class="TA">-6</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">10</td>
+            <td class="DW">0</td>
+            <td class="DD">4</td>
+            <td class="DL">6</td>
+            <td class="DA">-6</td>
+            <td class="GA">-40
+
+        </tr>
+
+        <tr>
+
+            <td class="count">149</td>
+            <td class="player-name-call">Каменский Никита</td>
+            <td class="team-call">SV</td>
+            <td class="TP">14</td>
+            <td class="TW">2</td>
+            <td class="TD">4</td>
+            <td class="TL">8</td>
+            <td class="TA">-6</td>
+            <td class="SP">5</td>
+            <td class="SW">1</td>
+            <td class="SD">1</td>
+            <td class="SL">3</td>
+            <td class="SA">-2</td>
+            <td class="DP">9</td>
+            <td class="DW">1</td>
+            <td class="DD">3</td>
+            <td class="DL">5</td>
+            <td class="DA">-4</td>
+            <td class="GA">-28
+
+        </tr>
+
+        <tr>
+
+            <td class="count">150</td>
+            <td class="player-name-call">Титов Михаил</td>
+            <td class="team-call">KPI</td>
+            <td class="TP">8</td>
+            <td class="TW">0</td>
+            <td class="TD">1</td>
+            <td class="TL">7</td>
+            <td class="TA">-7</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">8</td>
+            <td class="DW">0</td>
+            <td class="DD">1</td>
+            <td class="DL">7</td>
+            <td class="DA">-7</td>
+            <td class="GA">-42
+
+        </tr>
+
+        <tr>
+
+            <td class="count">151</td>
+            <td class="player-name-call">Шматков Александр</td>
+            <td class="team-call">KS</td>
+            <td class="TP">7</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">7</td>
+            <td class="TA">-7</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">7</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">7</td>
+            <td class="DA">-7</td>
+            <td class="GA">-43
+
+        </tr>
+
+        <tr>
+
+            <td class="count">152</td>
+            <td class="player-name-call">Чех Илья</td>
+            <td class="team-call">KPI</td>
+            <td class="TP">8</td>
+            <td class="TW">0</td>
+            <td class="TD">1</td>
+            <td class="TL">7</td>
+            <td class="TA">-7</td>
+            <td class="SP">1</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">7</td>
+            <td class="DW">0</td>
+            <td class="DD">1</td>
+            <td class="DL">6</td>
+            <td class="DA">-6</td>
+            <td class="GA">-45
+
+        </tr>
+
+        <tr>
+
+            <td class="count">153</td>
+            <td class="player-name-call">Яковлев Александр</td>
+            <td class="team-call">KS</td>
+            <td class="TP">11</td>
+            <td class="TW">1</td>
+            <td class="TD">2</td>
+            <td class="TL">8</td>
+            <td class="TA">-7</td>
+            <td class="SP">5</td>
+            <td class="SW">1</td>
+            <td class="SD">1</td>
+            <td class="SL">3</td>
+            <td class="SA">-2</td>
+            <td class="DP">6</td>
+            <td class="DW">0</td>
+            <td class="DD">1</td>
+            <td class="DL">5</td>
+            <td class="DA">-5</td>
+            <td class="GA">-35
+
+        </tr>
+
+        <tr>
+
+            <td class="count">154</td>
+            <td class="player-name-call">Яншин Дмитрий</td>
+            <td class="team-call">RND</td>
+            <td class="TP">13</td>
+            <td class="TW">1</td>
+            <td class="TD">3</td>
+            <td class="TL">9</td>
+            <td class="TA">-8</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">13</td>
+            <td class="DW">1</td>
+            <td class="DD">3</td>
+            <td class="DL">9</td>
+            <td class="DA">-8</td>
+            <td class="GA">-48
+
+        </tr>
+
+        <tr>
+
+            <td class="count">155</td>
+            <td class="player-name-call">Сосудин Вячеслав</td>
+            <td class="team-call">OT</td>
+            <td class="TP">14</td>
+            <td class="TW">0</td>
+            <td class="TD">6</td>
+            <td class="TL">8</td>
+            <td class="TA">-8</td>
+            <td class="SP">2</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">2</td>
+            <td class="SA">-2</td>
+            <td class="DP">12</td>
+            <td class="DW">0</td>
+            <td class="DD">6</td>
+            <td class="DL">6</td>
+            <td class="DA">-6</td>
+            <td class="GA">-50
+
+        </tr>
+
+        <tr>
+
+            <td class="count">156</td>
+            <td class="player-name-call">Ким Сергей</td>
+            <td class="team-call">KPI</td>
+            <td class="TP">8</td>
+            <td class="TW">0</td>
+            <td class="TD">0</td>
+            <td class="TL">8</td>
+            <td class="TA">-8</td>
+            <td class="SP">3</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">3</td>
+            <td class="SA">-3</td>
+            <td class="DP">5</td>
+            <td class="DW">0</td>
+            <td class="DD">0</td>
+            <td class="DL">5</td>
+            <td class="DA">-5</td>
+            <td class="GA">-48
+
+        </tr>
+
+        <tr>
+
+            <td class="count">157</td>
+            <td class="player-name-call">Васильевич Роман</td>
+            <td class="team-call">RND</td>
+            <td class="TP">16</td>
+            <td class="TW">2</td>
+            <td class="TD">4</td>
+            <td class="TL">10</td>
+            <td class="TA">-8</td>
+            <td class="SP">8</td>
+            <td class="SW">1</td>
+            <td class="SD">2</td>
+            <td class="SL">5</td>
+            <td class="SA">-4</td>
+            <td class="DP">8</td>
+            <td class="DW">1</td>
+            <td class="DD">2</td>
+            <td class="DL">5</td>
+            <td class="DA">-4</td>
+            <td class="GA">-44
+
+        </tr>
+
+        <tr>
+
+            <td class="count">158</td>
+            <td class="player-name-call">Арапова Ольга</td>
+            <td class="team-call">KS</td>
+            <td class="TP">14</td>
+            <td class="TW">0</td>
+            <td class="TD">5</td>
+            <td class="TL">9</td>
+            <td class="TA">-9</td>
+            <td class="SP">1</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">1</td>
+            <td class="SA">-1</td>
+            <td class="DP">13</td>
+            <td class="DW">0</td>
+            <td class="DD">5</td>
+            <td class="DL">8</td>
+            <td class="DA">-8</td>
+            <td class="GA">-55
+
+        </tr>
+
+        <tr>
+
+            <td class="count">159</td>
+            <td class="player-name-call">Соколова Снежана</td>
+            <td class="team-call">SV</td>
+            <td class="TP">16</td>
+            <td class="TW">2</td>
+            <td class="TD">3</td>
+            <td class="TL">11</td>
+            <td class="TA">-9</td>
+            <td class="SP">2</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">2</td>
+            <td class="SA">-2</td>
+            <td class="DP">14</td>
+            <td class="DW">2</td>
+            <td class="DD">3</td>
+            <td class="DL">9</td>
+            <td class="DA">-7</td>
+            <td class="GA">-54
+
+        </tr>
+
+        <tr>
+
+            <td class="count">160</td>
+            <td class="player-name-call">Скворцов Андрей</td>
+            <td class="team-call">KS</td>
+            <td class="TP">11</td>
+            <td class="TW">0</td>
+            <td class="TD">2</td>
+            <td class="TL">9</td>
+            <td class="TA">-9</td>
+            <td class="SP">2</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">2</td>
+            <td class="SA">-2</td>
+            <td class="DP">9</td>
+            <td class="DW">0</td>
+            <td class="DD">2</td>
+            <td class="DL">7</td>
+            <td class="DA">-7</td>
+            <td class="GA">-64
+
+        </tr>
+
+        <tr>
+
+            <td class="count">161</td>
+            <td class="player-name-call">Гамзатов Магомед</td>
+            <td class="team-call">RND</td>
+            <td class="TP">15</td>
+            <td class="TW">0</td>
+            <td class="TD">4</td>
+            <td class="TL">11</td>
+            <td class="TA">-11</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">15</td>
+            <td class="DW">0</td>
+            <td class="DD">4</td>
+            <td class="DL">11</td>
+            <td class="DA">-11</td>
+            <td class="GA">-68
+
+        </tr>
+
+        <tr>
+
+            <td class="count">162</td>
+            <td class="player-name-call">Жолдаспаев Адиль</td>
+            <td class="team-call">RND</td>
+            <td class="TP">16</td>
+            <td class="TW">0</td>
+            <td class="TD">5</td>
+            <td class="TL">11</td>
+            <td class="TA">-11</td>
+            <td class="SP">7</td>
+            <td class="SW">0</td>
+            <td class="SD">2</td>
+            <td class="SL">5</td>
+            <td class="SA">-5</td>
+            <td class="DP">9</td>
+            <td class="DW">0</td>
+            <td class="DD">3</td>
+            <td class="DL">6</td>
+            <td class="DA">-6</td>
+            <td class="GA">-58
+
+        </tr>
+
+        <tr>
+
+            <td class="count">163</td>
+            <td class="player-name-call">Марченко Андрей</td>
+            <td class="team-call">KS</td>
+            <td class="TP">16</td>
+            <td class="TW">0</td>
+            <td class="TD">3</td>
+            <td class="TL">13</td>
+            <td class="TA">-13</td>
+            <td class="SP">0</td>
+            <td class="SW">0</td>
+            <td class="SD">0</td>
+            <td class="SL">0</td>
+            <td class="SA">0</td>
+            <td class="DP">16</td>
+            <td class="DW">0</td>
+            <td class="DD">3</td>
+            <td class="DL">13</td>
+            <td class="DA">-13</td>
+            <td class="GA">-65
+
+        </tr>
+
+        </tbody>
+    </table>
+    <div class="glossary">
+        <div class="glossary_title">Глоссарий</div>
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">И</dt>
+            <dd class="gloss_transcript">Количество проведенных игр</dd>
+        </dl>
+
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">В</dt>
+            <dd class="gloss_transcript">Количество выигранных игр</dd>
+        </dl>
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">Н</dt>
+            <dd class="gloss_transcript">Количество ничейных игр</dd>
+        </dl>
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">П</dt>
+            <dd class="gloss_transcript">Количество проигранных игр</dd>
+        </dl>
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">Р</dt>
+            <dd class="gloss_transcript">Разница выигранных и проигранных игр</dd>
+        </dl>
+
+        <dl class="glossary_item">
+            <dt class="gloss_abbreviation">РМ</dt>
+            <dd class="gloss_transcript">Разница забитых и пропущенных мячей</dd>
+        </dl>
+    </div>
+</div>
+
+
+    </div>
+</div>
+<script src="/static/league/js/ui.js"></script>
+</body>
+
+</html>

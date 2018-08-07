@@ -1,0 +1,253 @@
+<!doctype html>
+<!---
+Migration guide:
+1. на 19 и 23 строки подключены либы
+2. css/layouts/side-menu.css поменял фон
+3. <span class="set-card__team-img" style="background-image: url(img/places/jaws.jpg)"></span>
+если картинки нет - внутрь спана пихнуть сокращенное название в верхнем регистре
+4. Картинки для всех баров (москва и питер) есть
+5.
+--->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+    <title>Match#2</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+            <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/layouts/side-menu.css">
+            <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+        <!--<![endif]-->
+        <link rel="stylesheet" href="css/protocol.css">
+</head>
+<body>
+
+
+
+
+
+
+  <div id="layout">
+      <!-- Menu toggle -->
+      <div  class="moble-head">
+
+      <a id="menuLink" href="#menu"  class="menu-link moble-head__menu-link">
+          <!-- Hamburger icon -->
+          <span></span>
+      </a>
+
+      <span class="mobile-head__logo">FOOS LEAGUE</span>
+      <div class="moble-head__select-city">
+        <a class="pure-button">МСК</a>
+        <a class="pure-button pure-button-primary">СПБ</a>
+      </div>
+    </div>
+
+      <div id="menu">
+          <div class="pure-menu">
+              <div class="pure-menu-heading">
+                <span class="logo">FOOS LEAGUE</span>
+                <div class="pure-menu-heading__select-city">
+                  <a class="pure-button">Москва</a>
+                  <a class="pure-button pure-button-primary">СПБ</a>
+                </div>
+              </div>
+
+              <ul class="pure-menu-list">
+                  <li class="pure-menu-item"><a href="#" class="pure-menu-link">Рейтинг команд</a></li>
+                  <li class="pure-menu-item"><a href="#" class="pure-menu-link">Рейтинг игроков</a></li>
+
+                  <li class="pure-menu-item menu-item-divided pure-menu-selected">
+                      <a href="#" class="pure-menu-link">Матчи</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div id="main">
+      <div class="header">
+          <h1><span class="title__city">Санкт-Петербург / </span>Рейтинг команд</h1>
+
+          <div class="season-buttons">
+
+              <a class="pure-button pure-button-primary division-link" id="tab-link-division-1" onclick="openTab('division-1', 'division')">1й дивизион</a>
+
+              <a class="pure-button  division-link" id="tab-link-division-2" onclick="openTab('division-2', 'division')">2й дивизион</a>
+
+          </div>
+
+      </div>
+
+
+      <div class="content division tab-content-division" id="division-1" style="display: block">
+        <table class="pure-table table_style_default teams-result-table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th class="team-call">Команда</th>
+                    <th>И</th>
+                    <th>В</th>
+
+                    <th>Н</th>
+
+                    <th>П</th>
+
+                    <th class="goal-difference">Р</th>
+                    <th class="sets">С</th>
+                    <th>О</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>1</td>
+                    <td class="team-call">Geek Team</td>
+                    <td>5</td>
+                    <td>3</td>
+
+                    <td>2</td>
+
+                    <td>0</td>
+
+                    <td class="goal-difference">48</td>
+                    <td class="sets">16</td>
+                    <td class="hidden">0</td>
+                    <td>8</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td class="team-call">Peppers</td>
+                    <td>6</td>
+                    <td>3</td>
+
+                    <td>2</td>
+
+                    <td>1</td>
+
+                    <td class="goal-difference">36</td>
+                    <td class="sets">15</td>
+                    <td class="hidden">0</td>
+                    <td>8</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td class="team-call">Seven Sins</td>
+                    <td>6</td>
+                    <td>2</td>
+
+                    <td>3</td>
+
+                    <td>1</td>
+
+                    <td class="goal-difference">18</td>
+                    <td class="sets">15</td>
+                    <td class="hidden">0</td>
+                    <td>7</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td class="team-call">Wat</td>
+                    <td>4</td>
+                    <td>2</td>
+
+                    <td>1</td>
+
+                    <td>1</td>
+
+                    <td class="goal-difference">13</td>
+                    <td class="sets">10</td>
+                    <td class="hidden">0</td>
+                    <td>5</td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td class="team-call">DataArt</td>
+                    <td>6</td>
+                    <td>1</td>
+
+                    <td>3</td>
+
+                    <td>2</td>
+
+                    <td class="goal-difference">-3</td>
+                    <td class="sets">10</td>
+                    <td class="hidden">0</td>
+                    <td>5</td>
+                </tr>
+
+                <tr>
+                    <td>6</td>
+                    <td class="team-call">Дикие Ослы</td>
+                    <td>6</td>
+                    <td>1</td>
+
+                    <td>2</td>
+
+                    <td>3</td>
+
+                    <td class="goal-difference">-52</td>
+                    <td class="sets">7</td>
+                    <td class="hidden">0</td>
+                    <td>4</td>
+                </tr>
+
+                <tr>
+                    <td>7</td>
+                    <td class="team-call">5 girls 1 Paschenko</td>
+                    <td>5</td>
+                    <td>0</td>
+
+                    <td>1</td>
+
+                    <td>4</td>
+
+                    <td class="goal-difference">-60</td>
+                    <td class="sets">3</td>
+                    <td class="hidden">0</td>
+                    <td>1</td>
+                </tr>
+
+                </tbody>
+            </table>
+            <div class="glossary">
+              <div class="glossary_title">Глоссарий</div>
+              <dl class="glossary_item">
+                <dt class="gloss_abbreviation">И</dt>
+                <dd class="gloss_transcript">Количество проведенных игр</dd>
+              </dl>
+              <dl class="glossary_item">
+                <dt class="gloss_abbreviation">В</dt>
+                <dd class="gloss_transcript">Количество выигранных игр</dd>
+              </dl>
+              <dl class="glossary_item">
+                <dt class="gloss_abbreviation">Н</dt>
+                <dd class="gloss_transcript">Количество ничейных игр</dd>
+              </dl>
+              <dl class="glossary_item">
+                <dt class="gloss_abbreviation">П</dt>
+                <dd class="gloss_transcript">Количество проигранных игр</dd>
+              </dl>
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+
+
+<script src="js/ui.js"></script>
+
+</body>
+</html>
